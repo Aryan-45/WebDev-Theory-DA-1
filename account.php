@@ -1,31 +1,22 @@
 <?php
-// account.php
+
 session_start();
 
-// Check if the user is logged in, if not then redirect to login page
-// if (!isset($_SESSION["user_id"])) {
-//     $_SESSION['error_message'] = "Please log in to access your account.";
-//     header("location: login.php");
-//     exit;
-// }
-
-// Include necessary files
 require_once __DIR__ . '/php/config.php';
 require_once __DIR__ . '/php/includes/db_connect.php';
 
 $user_id = 1;
-$orders = []; // Initialize orders array
+$orders = [];
 $addresses = [
     'billing' => null,
     'shipping' => null
-]; // Initialize address array
-$user_data = []; // Initialize user data array
+]; 
+$user_data = [];
 
-// --- Fetch User's Orders ---
 $pdo = getDbConnection();
 if ($pdo) {
     try {
-        // Fetch basic order info
+  
         $sql_orders = "SELECT order_id, order_date, order_status, total_amount
                        FROM orders
                        WHERE user_id = :user_id
@@ -47,10 +38,7 @@ if ($pdo) {
         $stmt_user->execute();
         $user_data = $stmt_user->fetch(PDO::FETCH_ASSOC); // Fetches the data into $user_data array
 
-        // Optional: Fetch item count for each order (more complex query)
-        // You could do this in a separate query loop or join, but for display simplicity,
-        // we'll stick to the basic info for now. The "X items" can be added later.
-        // Organize fetched addresses by type
+
         foreach ($fetched_addresses as $addr) {
             if ($addr['address_type'] === 'billing') {
                 $addresses['billing'] = $addr;
@@ -61,14 +49,13 @@ if ($pdo) {
 
     } catch (PDOException $e) {
         error_log("Database Error fetching orders for user {$user_id}: " . $e->getMessage());
-        // Handle error gracefully, maybe set an error message variable to display
+
         $order_fetch_error = "Could not retrieve order history at this time.";
     }
 } else {
     $order_fetch_error = "Database connection error.";
 }
 
-// --- Fetch User Data (for account details panel - example) ---
 $user_data = [];
 if($pdo) {
     try {
@@ -77,14 +64,14 @@ if($pdo) {
         $stmt_user->bindParam(':user_id', $user_id, PDO::PARAM_INT);
         $stmt_user->execute();
         $user_data = $stmt_user->fetch(PDO::FETCH_ASSOC);
-        // Update session display name if it differs from DB (optional consistency check)
+
         if ($user_data && ($_SESSION['display_name'] ?? '') !== $user_data['display_name']) {
              $_SESSION['display_name'] = $user_data['display_name'];
         }
 
     } catch (PDOException $e) {
          error_log("Database Error fetching user data for user {$user_id}: " . $e->getMessage());
-         // Handle error
+
     }
 }
 
@@ -110,9 +97,6 @@ if($pdo) {
 </head>
 <body>
 
-    <!-- ============================================= -->
-    <!-- HEADER & NAVIGATION (Check Login State)     -->
-    <!-- ============================================= -->
      <header class="site-header">
         <div class="container header-container">
             <div class="logo"> <a href="index.php">Artisan Collective</a> </div>
@@ -136,19 +120,10 @@ if($pdo) {
             <div class="search-bar"> <form action="search.php" method="get"> <input type="search" name="query" placeholder="Search products & artisans..." aria-label="Search products and artisans"> <button type="submit">Search</button> </form> </div>
         </div>
     </header>
-    <!-- ============================================= -->
-    <!-- END OF HEADER & NAVIGATION                   -->
-    <!-- ============================================= -->
 
-
-    <!-- ============================================= -->
-    <!-- MAIN CONTENT AREA                             -->
-    <!-- ============================================= -->
     <main>
 
-         <!-- ============================================= -->
-        <!-- BREADCRUMBS & TITLE                         -->
-        <!-- ============================================= -->
+
         <section class="page-header section-padding bg-medium">
             <div class="container">
                 <nav aria-label="breadcrumb" class="breadcrumbs">
@@ -162,22 +137,15 @@ if($pdo) {
                  <!-- <p style="margin-top: 5px;">Welcome back, <?php //echo htmlspecialchars($_SESSION['display_name'] ?? 'User'); ?>!</p> -->
             </div>
         </section>
-        <!-- ============================================= -->
-        <!-- END OF BREADCRUMBS & TITLE                  -->
-        <!-- ============================================= -->
 
-
-        <!-- ============================================= -->
-        <!-- ACCOUNT AREA                                -->
-        <!-- ============================================= -->
         <section class="account-section section-padding">
             <div class="container account-container">
 
                 <aside class="account-navigation">
                     <h2 class="account-nav-title">Navigation</h2>
                     <ul>
-                        <!-- Dashboard link removed -->
-                        <li><a href="#orders" class="account-nav-link active">Orders</a></li> <!-- Orders is now active by default -->
+     
+                        <li><a href="#orders" class="account-nav-link active">Orders</a></li>
                         <li><a href="#addresses" class="account-nav-link">Addresses</a></li>
                         <li><a href="#settings" class="account-nav-link">Account Details</a></li>
                         <li><a href="logout.php" class="account-nav-link">Logout</a></li>
@@ -186,10 +154,8 @@ if($pdo) {
 
                 <section class="account-content">
 
-                    <!-- DASHBOARD PANEL REMOVED -->
 
-                    <!-- ORDERS PANEL (NOW DEFAULT ACTIVE) -->
-                    <div id="orders" class="account-panel active"> <!-- Removed style="display: none;" and added active class -->
+                    <div id="orders" class="account-panel active"> 
                         <h2 class="account-panel-title">Orders</h2>
 
                         <?php if (isset($order_fetch_error)): ?>
@@ -225,10 +191,7 @@ if($pdo) {
                                 </tbody>
                             </table>
                         <?php endif; ?>
-                    </div> <!-- End Orders Panel -->
-
-
-                    <!-- ADDRESSES PANEL -->
+                    </div> 
                     <div id="addresses" class="account-panel" style="display: none;"> <!-- Still hidden initially -->
                         <h2 class="account-panel-title">Addresses</h2>
 
@@ -275,7 +238,7 @@ if($pdo) {
                                 </div>
                             </div>
 
-                            <!-- Hidden Form for Editing Addresses (Shown by JS) -->
+                           
                             <div id="address-edit-form-container" style="display: none; margin-top: 30px;">
                                 <h3 id="address-form-title">Edit Address</h3>
                                 <form id="address-form" action="php/update-address.php" method="POST" class="site-form">
@@ -335,42 +298,39 @@ if($pdo) {
                                 </form>
                             </div>
                         <?php endif; ?>
-                    </div> <!-- End Addresses Panel -->
-
-
-                <!-- ACCOUNT DETAILS PANEL -->
-                <div id="settings" class="account-panel" style="display: none;"> <!-- Still hidden initially -->
+                    </div> 
+                <div id="settings" class="account-panel" style="display: none;"> 
                     <h2 class="account-panel-title">Account Details</h2>
-                    <?php // Check if there was an error fetching data ?>
+                    <?php  ?>
                     <?php if (isset($user_data_error)): ?>
                         <p class="error"><?php echo htmlspecialchars($user_data_error); ?></p>
-                    <?php // Check if data was fetched but is somehow empty (e.g., user deleted?) ?>
+                    <?php ?>
                     <?php elseif (empty($user_data)): ?>
                         <p class="error">Could not load user details.</p>
-                    <?php // If no errors and data exists, display the form ?>
+                    <?php ?>
                     <?php else: ?>
                         <form id="account-details-form" action="php/update-account.php" method="POST" class="site-form">
                             <div class="form-row">
                                 <div class="form-group form-group-half">
                                     <label for="account-first-name">First Name <span class="required">*</span></label>
-                                    <?php // Use the fetched data in the 'value' attribute ?>
+                                    <?php  ?>
                                     <input type="text" id="account-first-name" name="first_name" required class="form-control" value="<?php echo htmlspecialchars($user_data['first_name'] ?? ''); ?>">
                                 </div>
                                 <div class="form-group form-group-half">
                                     <label for="account-last-name">Last Name <span class="required">*</span></label>
-                                    <?php // Use the fetched data in the 'value' attribute ?>
+                                    <?php ?>
                                     <input type="text" id="account-last-name" name="last_name" required class="form-control" value="<?php echo htmlspecialchars($user_data['last_name'] ?? ''); ?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="account-display-name">Display Name <span class="required">*</span></label>
-                                <?php // Use the fetched data in the 'value' attribute ?>
+                                <?php ?>
                                 <input type="text" id="account-display-name" name="display_name" required class="form-control" value="<?php echo htmlspecialchars($user_data['display_name'] ?? ''); ?>">
                                 <small>This will be how your name will be displayed in the account section and in reviews</small>
                             </div>
                             <div class="form-group">
                                 <label for="account-email">Email Address <span class="required">*</span></label>
-                                <?php // Use the fetched data in the 'value' attribute ?>
+                                <?php ?>
                                 <input type="email" id="account-email" name="email" required class="form-control" value="<?php echo htmlspecialchars($user_data['email'] ?? ''); ?>">
                             </div>
                             <fieldset class="password-change-fieldset">
@@ -398,20 +358,11 @@ if($pdo) {
 
             </div> <!-- End account-container -->
         </section>
-        <!-- ============================================= -->
-        <!-- END OF ACCOUNT AREA                         -->
-        <!-- ============================================= -->
+
 
 
     </main>
-    <!-- ============================================= -->
-    <!-- END OF MAIN CONTENT AREA                      -->
-    <!-- ============================================= -->
 
-
-    <!-- ============================================= -->
-    <!-- FOOTER SECTION (Check Links)                -->
-    <!-- ============================================= -->
     <footer class="site-footer section-padding">
         <div class="container footer-container">
              <div class="footer-column about-column"> <h4 class="footer-heading">Artisan Collective</h4> <p>Your source for authentic, locally crafted goods. Supporting artisans and celebrating creativity.</p> <div class="social-links"> <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a> <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a> <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a> </div> </div>
@@ -423,9 +374,7 @@ if($pdo) {
              <p class="copyright-text">© <span id="current-year"></span> Artisan Collective. All Rights Reserved.</p>
          </div>
     </footer>
-    <!-- ============================================= -->
-    <!-- END OF FOOTER SECTION                         -->
-    <!-- ============================================= -->
+
 
     <script src="js/main.js"></script>
     <script src="js/account.js"></script>

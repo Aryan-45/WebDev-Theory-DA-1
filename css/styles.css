@@ -1,6 +1,4 @@
-/* ============================================= */
-/* CSS RESET & BASIC SETUP                     */
-/* ============================================= */
+
 *,
 *::before,
 *::after {
@@ -14,14 +12,14 @@ html {
 }
 
 body {
-  font-family: 'Nunito Sans', sans-serif; /* Direct font name */
+  font-family: 'Nunito Sans', sans-serif; 
   line-height: 1.6;
-  color: #36454F; /* Direct color */
-  background-color: #F5F5DC; /* Direct color */
+  color: #36454F; 
+  background-color: #F5F5DC; 
   font-size: 16px;
 }
 
-/* Prevent scrolling when mobile menu is open */
+
 body.no-scroll {
     overflow: hidden;
 }
@@ -43,26 +41,23 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Merriweather', serif; /* Direct font name */
+  font-family: 'Merriweather', serif; 
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 12px; /* Direct pixel value (approx 0.75em) */
+  margin-bottom: 12px; 
 }
 
-h1 { font-size: 40px; /* Direct pixel value (approx 2.5rem) */}
-h2 { font-size: 32px; /* Direct pixel value (approx 2rem) */}
-h3 { font-size: 24px; /* Direct pixel value (approx 1.5rem) */}
-h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
+h1 { font-size: 40px; }
+h2 { font-size: 32px; }
+h3 { font-size: 24px; }
+h4 { font-size: 19px; }
 
 
-/* ============================================= */
-/* UTILITY CLASSES                             */
-/* ============================================= */
 .container {
   width: 90%;
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0 16px; /* Direct pixel value */
+  padding: 0 16px; 
 }
 
 .text-center {
@@ -70,15 +65,15 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 }
 
 .section-padding {
-  padding-top: 48px; /* Direct pixel value */
-  padding-bottom: 48px; /* Direct pixel value */
+  padding-top: 48px; 
+  padding-bottom: 48px; 
 }
 
 .bg-medium {
-  background-color: #E8E4D5; /* Direct color */
+  background-color: #E8E4D5; 
 }
 
-.sr-only { /* Screen Reader only text */
+.sr-only { 
   position: absolute;
   width: 1px;
   height: 1px;
@@ -89,56 +84,56 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
   white-space: nowrap;
   border: 0;
 }
-/* Basic visually hidden class for things like honeypots */
+
 .visually-hidden {
   position: absolute !important;
   height: 1px; width: 1px;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap; /* Prevent wrapping */
+  white-space: nowrap; 
 }
 
-/* Button Styles */
+
 .btn {
   display: inline-block;
-  padding: 12px 24px; /* Direct pixel value */
+  padding: 12px 24px; 
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 600;
   text-align: center;
   border: 1px solid transparent;
-  border-radius: 5px; /* Direct pixel value */
+  border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 16px; /* Direct pixel value */
+  font-size: 16px; 
   white-space: nowrap;
 }
 
 .btn-primary {
-  background-color: #A0522D; /* Direct color */
-  color: #F8F8F8; /* Direct color */
-  border-color: #A0522D; /* Direct color */
+  background-color: #A0522D; 
+  color: #F8F8F8; 
+  border-color: #A0522D; 
 }
 .btn-primary:hover, .btn-primary:focus {
-  background-color: #8B4513; /* Slightly darker brown */
+  background-color: #8B4513; 
   border-color: #8B4513;
   color: #F8F8F8;
 }
 
 .btn-secondary {
-  background-color: #2F4F4F; /* Direct color */
-  color: #F8F8F8; /* Direct color */
+  background-color: #2F4F4F; 
+  color: #F8F8F8; 
   border-color: #2F4F4F;
 }
 .btn-secondary:hover, .btn-secondary:focus {
-  background-color: #4F6F6F; /* Slightly lighter green/gray */
+  background-color: #4F6F6F; 
   border-color: #4F6F6F;
   color: #F8F8F8;
 }
 
 .btn-outline {
    background-color: transparent;
-   color: #A0522D; /* Direct color */
-   border-color: #A0522D; /* Direct color */
+   color: #A0522D; 
+   border-color: #A0522D;
 }
 .btn-outline:hover, .btn-outline:focus {
     background-color: #A0522D;
@@ -146,25 +141,21 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 }
 
 .btn-sm {
-    padding: 6px 16px; /* Direct pixel value */
-    font-size: 14px; /* Direct pixel value */
+    padding: 6px 16px; 
+    font-size: 14px;
 }
 .btn-lg {
-    padding: 16px 32px; /* Direct pixel value */
-    font-size: 18px; /* Direct pixel value */
+    padding: 16px 32px; 
+    font-size: 18px; 
 }
-.btn-block { /* Utility for full width */
+.btn-block { 
     display: block;
     width: 100%;
 }
 
-
-/* ============================================= */
-/* HEADER & NAVIGATION STYLES                   */
-/* ============================================= */
 .site-header {
-  background-color: #F5F5DC; /* Direct color */
-  padding: 8px 0; /* Direct pixel value */
+  background-color: #F5F5DC; 
+  padding: 8px 0; 
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
@@ -181,8 +172,8 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 .logo a {
   font-family: 'Merriweather', serif;
   font-weight: 700;
-  font-size: 24px; /* Direct pixel value */
-  color: #36454F; /* Direct color */
+  font-size: 24px; 
+  color: #36454F;
 }
 .logo img {
     max-height: 40px;
@@ -190,25 +181,25 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 
 .main-navigation .nav-list {
   display: flex;
-  gap: 24px; /* Direct pixel value */
+  gap: 24px; 
 }
 
 .main-navigation .nav-link {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 600;
   color: #36454F;
-  padding: 8px 0; /* Direct pixel value */
+  padding: 8px 0; 
   position: relative;
-  display: inline-flex; /* Align icon correctly */
+  display: inline-flex; 
   align-items: center;
-  gap: 6px; /* Space between text and icon */
+  gap: 6px; 
 }
 
 .main-navigation .nav-link:hover,
 .main-navigation .nav-link:focus,
-.main-navigation .nav-item.active .nav-link, /* Style active menu item */
-.main-navigation .nav-link.active { /* Also allow direct 'active' class */
-  color: #A0522D; /* Direct color */
+.main-navigation .nav-item.active .nav-link,
+.main-navigation .nav-link.active { 
+  color: #A0522D; 
 }
 
 /* Basic Dropdown Styles */
@@ -221,11 +212,11 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #ffffff; /* Direct color */
-  border: 1px solid #cccccc; /* Direct color */
-  border-radius: 5px; /* Direct pixel value */
+  background-color: #ffffff; 
+  border: 1px solid #cccccc; 
+  border-radius: 5px; 
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 8px 0; /* Direct pixel value */
+  padding: 8px 0; 
   min-width: 180px;
   z-index: 1001;
 }
@@ -239,45 +230,45 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 
 .dropdown-menu li a {
   display: block;
-  padding: 8px 16px; /* Direct pixel value */
-  color: #36454F; /* Direct color */
-  font-size: 15px; /* Direct pixel value */
+  padding: 8px 16px; 
+  color: #36454F; 
+  font-size: 15px; 
 }
 
 .dropdown-menu li a:hover,
 .dropdown-menu li a:focus {
-  background-color: #E8E4D5; /* Direct color */
-  color: #A0522D; /* Direct color */
+  background-color: #E8E4D5; 
+  color: #A0522D; 
 }
 .dropdown-divider {
     height: 1px;
-    margin: 8px 0; /* Direct pixel value */
+    margin: 8px 0; 
     overflow: hidden;
-    background-color: #cccccc; /* Direct color */
+    background-color: #cccccc; 
     border: 0;
 }
 
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 16px; /* Direct pixel value */
+  gap: 16px; 
 }
 
 .header-actions .action-link,
 .header-actions .search-toggle {
-  font-size: 19px; /* Direct pixel value */
-  color: #36454F; /* Direct color */
+  font-size: 19px; 
+  color: #36454F; 
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px; /* Direct pixel value */
+  padding: 4px; 
   position: relative;
 }
 .header-actions .action-link:hover,
 .header-actions .action-link:focus,
 .header-actions .search-toggle:hover,
 .header-actions .search-toggle:focus {
-  color: #A0522D; /* Direct color */
+  color: #A0522D; 
 }
 
 /* Style active action icon */
@@ -289,9 +280,9 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
     position: absolute;
     top: -5px;
     right: -10px;
-    background-color: #A0522D; /* Direct color */
-    color: #F8F8F8; /* Direct color */
-    font-size: 11px; /* Direct pixel value */
+    background-color: #A0522D; 
+    color: #F8F8F8; 
+    font-size: 11px; 
     font-weight: bold;
     border-radius: 50%;
     min-width: 18px; /* Use min-width */
@@ -312,10 +303,10 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
     transform: translateX(-50%);
     width: 80%;
     max-width: 500px;
-    background-color: #ffffff; /* Direct color */
-    padding: 16px; /* Direct pixel value */
+    background-color: #ffffff; 
+    padding: 16px; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 5px; /* Direct pixel value */
+    border-radius: 5px; 
     z-index: 1000;
 }
 .search-bar form {
@@ -323,11 +314,11 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 }
 .search-bar input[type="search"] {
     flex-grow: 1;
-    padding: 8px 16px; /* Direct pixel value */
-    border: 1px solid #cccccc; /* Direct color */
+    padding: 8px 16px; 
+    border: 1px solid #cccccc; 
     border-right: none; /* Remove right border */
-    border-radius: 5px 0 0 5px; /* Direct pixel value */
-    font-size: 16px; /* Direct pixel value */
+    border-radius: 5px 0 0 5px; 
+    font-size: 16px; 
 }
 .search-bar input[type="search"]:focus {
     outline: none;
@@ -335,13 +326,13 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 }
 
 .search-bar button[type="submit"] {
-    padding: 8px 16px; /* Direct pixel value */
-    border: 1px solid #A0522D; /* Direct color */
-    background-color: #A0522D; /* Direct color */
-    color: #F8F8F8; /* Direct color */
-    border-radius: 0 5px 5px 0; /* Direct pixel value */
+    padding: 8px 16px; 
+    border: 1px solid #A0522D; 
+    background-color: #A0522D; 
+    color: #F8F8F8; 
+    border-radius: 0 5px 5px 0; 
     cursor: pointer;
-    font-size: 16px; /* Direct pixel value */
+    font-size: 16px; 
     transition: background-color 0.3s ease;
 }
 .search-bar button[type="submit"]:hover {
@@ -353,26 +344,17 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
     display: none;
     background: none;
     border: none;
-    font-size: 24px; /* Direct pixel value */
-    color: #36454F; /* Direct color */
+    font-size: 24px; 
+    color: #36454F; 
     cursor: pointer;
     z-index: 1100;
     padding: 8px; /* Add some padding for easier clicking */
 }
 
 
-/* ============================================= */
-/* END OF HEADER & NAVIGATION STYLES            */
-/* ============================================= */
-
-
-/* ============================================= */
-/* HERO SECTION STYLES                           */
-/* ============================================= */
 .hero {
-    background-color: #2F4F4F; /* Direct color */
-    /* Example with image + overlay */
-    /* background-image: linear-gradient(rgba(47, 79, 79, 0.6), rgba(47, 79, 79, 0.6)), url('https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); */
+    background-color: #2F4F4F; 
+   
     background-size: cover;
     background-position: center center;
     min-height: 60vh;
@@ -380,57 +362,50 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #F8F8F8; /* Direct color */
-    padding: 48px 16px; /* Direct pixel value */
+    color: #F8F8F8; 
+    padding: 48px 16px; 
 }
 
 .hero-content h1 {
-    font-size: 48px; /* Direct pixel value */
-    margin-bottom: 16px; /* Direct pixel value */
+    font-size: 48px; 
+    margin-bottom: 16px; 
     font-weight: 700;
-    color: #ffffff; /* Direct color */
+    color: #ffffff; 
 }
 
 .hero-content p {
-    font-size: 19px; /* Direct pixel value */
+    font-size: 19px; 
     max-width: 600px;
-    margin: 0 auto 24px; /* Direct pixel value */
+    margin: 0 auto 24px; 
     opacity: 0.9;
 }
 
 .hero-content .btn-lg {
-     background-color: #DAA520; /* Direct color */
-     border-color: #DAA520; /* Direct color */
-     color: #36454F; /* Direct color */
+     background-color: #DAA520; 
+     border-color: #DAA520; 
+     color: #36454F; 
 }
 .hero-content .btn-lg:hover{
      background-color: #B8860B; /* Darker gold */
      border-color: #B8860B;
 }
 
-/* ============================================= */
-/* END OF HERO SECTION STYLES                   */
-/* ============================================= */
 
-
-/* ============================================= */
-/* CATEGORIES SHOWCASE STYLES                  */
-/* ============================================= */
 .section-title {
-    margin-bottom: 32px; /* Direct pixel value */
+    margin-bottom: 32px; 
 }
 
 .category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 24px; /* Direct pixel value */
+    gap: 24px; 
 }
 
 .category-card {
     display: block;
     text-align: center;
-    background-color: #ffffff; /* Direct color */
-    border-radius: 5px; /* Direct pixel value */
+    background-color: #ffffff; 
+    border-radius: 5px; 
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -443,10 +418,10 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 }
 
 .category-card h3 {
-    font-size: 18px; /* Direct pixel value */
-    padding: 16px; /* Direct pixel value */
+    font-size: 18px; 
+    padding: 16px; 
     margin-bottom: 0;
-    color: #36454F; /* Direct color */
+    color: #36454F; 
     font-weight: 600;
 }
 
@@ -457,28 +432,20 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 }
 .category-card:hover h3,
 .category-card:focus h3 {
-    color: #A0522D; /* Direct color */
+    color: #A0522D; 
 }
 
 
-/* ============================================= */
-/* END OF CATEGORIES SHOWCASE STYLES           */
-/* ============================================= */
-
-
-/* ============================================= */
-/* FEATURED PRODUCTS STYLES                    */
-/* ============================================= */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 32px; /* Direct pixel value */
+    gap: 32px; 
 }
 
 .product-card {
     background-color: #ffffff; /* White background for cards */
     border: 1px solid #E8E4D5; /* Light border */
-    border-radius: 5px; /* Direct pixel value */
+    border-radius: 5px; 
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -503,7 +470,7 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 }
 
 .product-info {
-    padding: 16px; /* Direct pixel value */
+    padding: 16px; 
     flex-grow: 1; /* Allow info to take remaining space */
     text-align: center;
     display: flex; /* Use flex for better control */
@@ -512,9 +479,9 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 }
 
 .product-title {
-    font-size: 18px; /* Direct pixel value */
+    font-size: 18px; 
     font-weight: 600;
-    margin-bottom: 4px; /* Direct pixel value */
+    margin-bottom: 4px; 
     color: #36454F;
 }
 .product-link:hover .product-title { /* Change title color on link hover */
@@ -522,43 +489,35 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 }
 
 .product-artisan {
-    font-size: 14px; /* Direct pixel value */
+    font-size: 14px; 
     color: #666;
-    margin-bottom: 8px; /* Direct pixel value */
+    margin-bottom: 8px; 
 }
 
 .product-price {
-    font-size: 18px; /* Direct pixel value */
+    font-size: 18px; 
     font-weight: 700;
-    color: #A0522D; /* Direct color */
+    color: #A0522D; 
     margin-top: auto; /* Push price down if space allows */
     padding-top: 8px; /* Space above price */
     margin-bottom: 16px; /* Space below price before button */
 }
 
-/* Button positioning inside the card but outside the link area */
 .product-card .add-to-cart-btn {
-   width: calc(100% - 32px); /* Full width minus padding */
-   margin: 0 16px 16px; /* Horizontal and bottom margin */
-   align-self: center; /* Center button horizontally */
+   width: calc(100% - 32px);
+   margin: 0 16px 16px; 
+   align-self: center; 
 }
 
 .view-all-link {
-    margin-top: 32px; /* Direct pixel value */
+    margin-top: 32px; 
 }
 
-/* ============================================= */
-/* END OF FEATURED PRODUCTS STYLES             */
-/* ============================================= */
 
-
-/* ============================================= */
-/* MISSION / SPOTLIGHT SECTION STYLES          */
-/* ============================================= */
 .mission-container {
     display: grid;
     grid-template-columns: 1fr; /* Default to single column */
-    gap: 32px; /* Direct pixel value */
+    gap: 32px; 
     align-items: center;
 }
 
@@ -575,7 +534,7 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 }
 
 .mission-image img {
-    border-radius: 5px; /* Direct pixel value */
+    border-radius: 5px; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
@@ -584,12 +543,12 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 }
 
 .mission-text p {
-    margin-bottom: 16px; /* Direct pixel value */
+    margin-bottom: 16px; 
     font-size: 17px; /* Slightly larger text */
     color: #4a5a6a; /* Slightly softer dark color */
 }
 .mission-text .btn {
-    margin-top: 16px; /* Direct pixel value */
+    margin-top: 16px; 
 }
 
 @media (max-width: 767px) { /* Ensure text aligns center on mobile stack */
@@ -597,52 +556,45 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
         text-align: center;
      }
      .mission-image {
-        margin-bottom: 24px; /* Direct pixel value */
+        margin-bottom: 24px; 
     }
 }
 
-/* ============================================= */
-/* END OF MISSION / SPOTLIGHT SECTION STYLES   */
-/* ============================================= */
 
-
-/* ============================================= */
-/* FOOTER STYLES                                 */
-/* ============================================= */
 .site-footer {
-  background-color: #2F4F4F; /* Direct color */
+  background-color: #2F4F4F; 
   color: #E8E4D5; /* Lighter text for contrast */
-  padding-top: 48px; /* Direct pixel value */
+  padding-top: 48px; 
 }
 
 .footer-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjust min width */
-  gap: 32px; /* Direct pixel value */
-  margin-bottom: 32px; /* Direct pixel value */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+  gap: 32px; 
+  margin-bottom: 32px; 
 }
 
 .footer-heading {
-  font-size: 18px; /* Direct pixel value */
+  font-size: 18px; 
   font-weight: 700;
-  margin-bottom: 16px; /* Direct pixel value */
-  color: #ffffff; /* Direct color */
+  margin-bottom: 16px; 
+  color: #ffffff; 
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .footer-column p {
-    font-size: 15px; /* Direct pixel value */
+    font-size: 15px; 
     opacity: 0.8;
-    margin-bottom: 16px; /* Direct pixel value */
+    margin-bottom: 16px; 
     line-height: 1.7;
 }
 .footer-column .footer-list li {
-  margin-bottom: 8px; /* Direct pixel value */
+  margin-bottom: 8px; 
 }
 .footer-column .footer-list a {
-  color: #E8E4D5; /* Direct color */
-  font-size: 15px; /* Direct pixel value */
+  color: #E8E4D5; 
+  font-size: 15px; 
   opacity: 0.8;
   transition: opacity 0.3s ease, color 0.3s ease;
 }
@@ -656,30 +608,30 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 
 .social-links a {
     display: inline-block;
-    color: #E8E4D5; /* Direct color */
-    font-size: 19px; /* Direct pixel value */
-    margin-right: 16px; /* Direct pixel value */
+    color: #E8E4D5; 
+    font-size: 19px; 
+    margin-right: 16px; 
     opacity: 0.8;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .social-links a:hover,
 .social-links a:focus {
     opacity: 1;
-    transform: translateY(-2px); /* Slight lift effect */
+    transform: translateY(-2px); 
 }
 
 .newsletter-form {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Direct pixel value */
+    gap: 8px; 
 }
 .newsletter-form input[type="email"] {
-    padding: 8px 16px; /* Direct pixel value */
-    border: 1px solid #608080; /* Lighter green/gray border */
-    background-color: #4F6F6F; /* Lighter green/gray background */
-    border-radius: 5px; /* Direct pixel value */
-    color: #F8F8F8; /* Direct color */
-    font-size: 15px; /* Direct pixel value */
+    padding: 8px 16px; 
+    border: 1px solid #608080; 
+    background-color: #4F6F6F; 
+    border-radius: 5px; 
+    color: #F8F8F8; 
+    font-size: 15px; 
 }
 .newsletter-form input[type="email"]::placeholder {
     color: rgba(248, 248, 248, 0.6); /* Lighter placeholder */
@@ -691,60 +643,48 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 }
 
 .newsletter-form button {
-     background-color: #A0522D; /* Direct color */
-     border-color: #A0522D; /* Direct color */
-     color: #F8F8F8; /* Direct color */
+     background-color: #A0522D; 
+     border-color: #A0522D; 
+     color: #F8F8F8; 
      align-self: flex-start;
 }
-/* Stacked form on mobile is fine, apply flex-row on larger screens */
 @media (min-width: 500px) {
     .newsletter-form {
         flex-direction: row;
     }
      .newsletter-form input[type="email"] {
         flex-grow: 1;
-        border-radius: 5px 0 0 5px; /* Direct pixel value */
+        border-radius: 5px 0 0 5px; 
     }
     .newsletter-form button {
-        border-radius: 0 5px 5px 0; /* Direct pixel value */
+        border-radius: 0 5px 5px 0; 
         align-self: stretch; /* Make button same height as input */
     }
 }
 
 
 .copyright-container {
-  border-top: 1px solid #608080; /* Lighter green/gray border */
-  padding: 24px 16px; /* Direct pixel value */
+  border-top: 1px solid #608080; 
+  padding: 24px 16px; 
   text-align: center;
 }
 
 .copyright-text {
-  font-size: 14px; /* Direct pixel value */
+  font-size: 14px; 
   opacity: 0.7;
-  margin: 0; /* Remove default paragraph margin */
+  margin: 0; 
 }
 
-/* ============================================= */
-/* END OF FOOTER STYLES                         */
-/* ============================================= */
-
-
-/* ============================================= */
-/* PAGE SPECIFIC STYLES (Shop, Cart, Account etc) */
-/* ============================================= */
-
-/* Page Header (Breadcrumbs & Title Area) */
 .page-header {
-    /* padding already handled by section-padding */
-    /* background color already handled by bg-medium */
+
     border-bottom: 1px solid #d8d4c5; /* Slightly darker than bg-medium */
 }
 
 .breadcrumbs ol {
     list-style: none;
     padding: 0;
-    margin: 0 0 12px 0; /* Space below breadcrumbs */
-    font-size: 14px; /* Smaller font */
+    margin: 0 0 12px 0; 
+    font-size: 14px; 
 }
 
 .breadcrumbs li {
@@ -1342,41 +1282,41 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 /* FORM STYLES (General) - Place these before page-specific form styles */
 /* ============================================= */
 .site-form .form-group {
-    margin-bottom: 20px; /* Direct pixel value */
+    margin-bottom: 20px; 
 }
 
 .site-form label {
     display: block;
-    margin-bottom: 6px; /* Direct pixel value */
+    margin-bottom: 6px; 
     font-weight: 600;
-    font-size: 15px; /* Direct pixel value */
-    color: #36454F; /* Direct color */
+    font-size: 15px; 
+    color: #36454F; 
 }
 
 .site-form .form-control {
     display: block; /* Ensure it takes full width */
     width: 100%;
-    padding: 10px 16px; /* Direct pixel value */
-    font-size: 16px; /* Direct pixel value */
+    padding: 10px 16px; 
+    font-size: 16px; 
     line-height: 1.5;
-    color: #36454F; /* Direct color */
-    background-color: #ffffff; /* Direct color */
+    color: #36454F; 
+    background-color: #ffffff; 
     background-clip: padding-box; /* Needed for some browsers */
-    border: 1px solid #cccccc; /* Direct color */
-    border-radius: 5px; /* Direct pixel value */
+    border: 1px solid #cccccc; 
+    border-radius: 5px; 
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     font-family: 'Nunito Sans', sans-serif; /* Ensure consistent font */
 }
 
 .site-form .form-control:focus {
-    border-color: #A0522D; /* Direct color */
+    border-color: #A0522D; 
     outline: 0;
     box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.25); /* Subtle focus ring */
 }
 
 .site-form textarea.form-control {
     resize: vertical; /* Allow vertical resize */
-    min-height: 120px; /* Direct pixel value */
+    min-height: 120px; 
 }
 
 .site-form select.form-control {
@@ -1406,29 +1346,17 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 .site-form .form-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Match form-group margin */
-    /* If using negative margins: */
-    /* margin-left: -10px; */
-    /* margin-right: -10px; */
+    gap: 20px; 
 }
 
 .site-form .form-group-half {
     flex: 1 1 calc(50% - 10px); /* Two columns with gap adjustment */
-    min-width: 150px; /* Prevent excessive shrinking */
-    /* If using negative margins: */
-    /* padding-left: 10px; */
-    /* padding-right: 10px; */
+    min-width: 150px; 
 }
-/* Clearfix if using floats instead of flexbox */
-/* .site-form .form-row::after { content: ""; display: table; clear: both; } */
 
-
-/* ============================================= */
-/* CONTACT PAGE SPECIFIC STYLES                */
-/* ============================================= */
 .contact-container {
     display: grid;
-    gap: 48px; /* Direct pixel value */
+    gap: 48px; 
 }
 
 @media (min-width: 768px) {
@@ -1440,33 +1368,33 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 
 .contact-info h2, .contact-form-wrapper h2 {
     margin-top: 0;
-    margin-bottom: 24px; /* Direct pixel value */
+    margin-bottom: 24px; 
     color: #36454F;
 }
 
 .contact-info ul {
     list-style: none;
     padding: 0;
-    margin-top: 16px; /* Direct pixel value */
+    margin-top: 16px; 
 }
 
 .contact-info li {
-    margin-bottom: 12px; /* Direct pixel value */
+    margin-bottom: 12px; 
     display: flex;
     align-items: center;
-    font-size: 16px; /* Direct pixel value */
+    font-size: 16px; 
     color: #4a5a6a;
 }
 
 .contact-info li i {
-    font-size: 18px; /* Direct pixel value */
-    color: #A0522D; /* Direct color */
-    margin-right: 12px; /* Direct pixel value */
+    font-size: 18px; 
+    color: #A0522D; 
+    margin-right: 12px; 
     width: 20px; /* Fixed width for alignment */
     text-align: center;
 }
 .contact-info a {
-    color: #A0522D; /* Direct color */
+    color: #A0522D; 
     text-decoration: underline;
 }
 .contact-info a:hover {
@@ -1494,21 +1422,19 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
     display: block;
 }
 
-/* ============================================= */
-/* APPLICATION PAGE SPECIFIC STYLES            */
-/* ============================================= */
+
 .application-intro p {
     max-width: 700px;
-    margin: 16px auto 0; /* Direct pixel value */
-    font-size: 18px; /* Direct pixel value */
+    margin: 16px auto 0; 
+    font-size: 18px; 
     color: #666;
     line-height: 1.7;
 }
 
 .large-form {
-    max-width: 800px; /* Limit width for better readability */
-    margin: 40px auto 0; /* Center the form, add top margin */
-    background-color: #ffffff; /* White background for form area */
+    max-width: 800px; 
+    margin: 40px auto 0; 
+    background-color: #ffffff; 
     padding: 32px;
     border-radius: 5px;
     border: 1px solid #E8E4D5;
@@ -1516,11 +1442,11 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 }
 
 .large-form h3 {
-    margin-top: 32px; /* Direct pixel value */
-    margin-bottom: 24px; /* Direct pixel value */
-    font-size: 22px; /* Direct pixel value */
-    border-bottom: 1px solid #E8E4D5; /* Direct color */
-    padding-bottom: 10px; /* Direct pixel value */
+    margin-top: 32px; 
+    margin-bottom: 24px; 
+    font-size: 22px; 
+    border-bottom: 1px solid #E8E4D5; 
+    padding-bottom: 10px; 
     color: #36454F;
 }
 .large-form h3:first-of-type {
@@ -1528,8 +1454,7 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 }
 
 .file-input {
-    /* Basic styling - file inputs are notoriously hard to style directly */
-    /* Often involves hiding the default input and styling a label */
+
     padding: 10px; /* Adjust padding as it behaves differently */
     background-color: #f9f9f9; /* Slightly different background */
     border: 1px solid #cccccc;
@@ -1540,15 +1465,11 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
     border-color: #A0522D;
 }
 
-/* Custom file input styling (optional advanced) */
-/* .file-input-wrapper { position: relative; overflow: hidden; display: inline-block; } */
-/* .file-input-wrapper input[type=file] { font-size: 100px; position: absolute; left: 0; top: 0; opacity: 0; cursor: pointer; } */
-/* .file-input-wrapper .btn { } */
 
 
 .file-feedback {
-    font-size: 14px; /* Direct pixel value */
-    margin-top: 6px; /* Direct pixel value */
+    font-size: 14px; 
+    margin-top: 6px; 
     color: #666; /* Default color */
     line-height: 1.4;
 }
@@ -1567,9 +1488,6 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 #application-status.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; display: block; padding: 12px 16px; border-radius: 5px; }
 
 
-/* ============================================= */
-/* MOBILE STYLES & MEDIA QUERIES               */
-/* ============================================= */
 @media (max-width: 767px) { /* Apply to screens smaller than 768px */
     h1 { font-size: 32px; }
     h2 { font-size: 28px; }
@@ -1619,9 +1537,7 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
          margin-left: auto; /* Push arrow to the right */
          transition: transform 0.3s ease;
      }
-     /* Rotate arrow when dropdown is conceptually 'open' (though sub-menu is always visible below) */
-     /* This requires JS to add an 'open' class to the parent li */
-     /* .nav-item.dropdown.open > .nav-link i.fa-chevron-down { transform: rotate(180deg); } */
+
 
      .dropdown-menu {
          position: static; /* Remove absolute positioning */
@@ -1707,5 +1623,3 @@ h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
 
 }
 
-/* ============================================= */
-/* END OF MOBILE STYLES & MEDIA QUER

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Cart page JS loaded.");
 
-    // --- Placeholder for Quantity Changes ---
+    
     const quantityInputs = document.querySelectorAll('.quantity-input input[type="number"]');
     const quantityButtons = document.querySelectorAll('.quantity-input .qty-btn');
 
@@ -16,19 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             input.value = currentValue;
             console.log("Quantity changed to:", currentValue, "(Placeholder - needs AJAX)");
-            // In real app: Update subtotal, total, and send AJAX request to update cart
+         
         });
     });
 
-     // --- Placeholder for Remove Item ---
+
      const removeButtons = document.querySelectorAll('.remove-item-btn');
      removeButtons.forEach(button => {
          button.addEventListener('click', (e) => {
              const cartItemRow = e.target.closest('.cart-item');
              console.log("Remove button clicked for item:", cartItemRow.querySelector('.cart-item-title').textContent, "(Placeholder - needs AJAX)");
-             // In real app: Send AJAX request to remove item, then remove row from DOM
+           
              cartItemRow.style.opacity = '0.5'; // Visual feedback placeholder
-             // cartItemRow.remove(); // Uncomment after AJAX works
+             
          });
      });
 

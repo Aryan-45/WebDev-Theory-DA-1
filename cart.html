@@ -5,23 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - Artisan Collective</title>
 
-    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome (for icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Our Stylesheet -->
+
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
 <body>
 
-    <!-- ============================================= -->
-    <!-- HEADER & NAVIGATION (Same as index.html)    -->
-    <!-- ============================================= -->
+ 
      <header class="site-header">
         <div class="container header-container">
             <div class="logo"> <a href="index.html">Artisan Collective</a> </div>
@@ -41,19 +38,9 @@
             <div class="search-bar"> <form action="/search" method="get"> <input type="search" name="query" placeholder="Search products & artisans..." aria-label="Search products and artisans"> <button type="submit">Search</button> </form> </div>
         </div>
     </header>
-    <!-- ============================================= -->
-    <!-- END OF HEADER & NAVIGATION                   -->
-    <!-- ============================================= -->
 
-
-    <!-- ============================================= -->
-    <!-- MAIN CONTENT AREA                             -->
-    <!-- ============================================= -->
     <main>
 
-         <!-- ============================================= -->
-        <!-- BREADCRUMBS & TITLE                         -->
-        <!-- ============================================= -->
         <section class="page-header section-padding bg-medium">
             <div class="container">
                 <nav aria-label="breadcrumb" class="breadcrumbs">
@@ -65,33 +52,25 @@
                 <h1 class="page-title">Shopping Cart</h1>
             </div>
         </section>
-        <!-- ============================================= -->
-        <!-- END OF BREADCRUMBS & TITLE                  -->
-        <!-- ============================================= -->
 
-
-        <!-- ============================================= -->
-        <!-- SHOPPING CART AREA                          -->
-        <!-- ============================================= -->
         <section class="shopping-cart-section section-padding">
             <div class="container">
 
-                <!-- Check if cart has items (PHP would handle this logic) -->
-                <div class="cart-container"> <!-- Wrapper for items and summary -->
+                <div class="cart-container"> 
 
                     <div class="cart-items">
                         <table class="cart-table">
                             <thead>
                                 <tr>
-                                    <th colspan="2">Product</th> <!-- Image + Title -->
+                                    <th colspan="2">Product</th> 
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th>Subtotal</th>
-                                    <th> </th> <!-- For remove button -->
+                                    <th> </th> 
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Cart Item Row 1 (Example) -->
+                                
                                 <tr class="cart-item">
                                     <td class="cart-item-image">
                                         <a href="product-detail.html">
@@ -116,7 +95,7 @@
                                     </td>
                                 </tr>
 
-                                <!-- Cart Item Row 2 (Example) -->
+                                
                                 <tr class="cart-item">
                                     <td class="cart-item-image">
                                         <a href="product-detail.html">
@@ -141,12 +120,12 @@
                                     </td>
                                 </tr>
 
-                                <!-- More items added by PHP -->
+                                
                             </tbody>
                         </table>
                          <div class="cart-actions">
                             <a href="shop-all.html" class="btn btn-outline">Continue Shopping</a>
-                            <!-- <button class="btn btn-secondary update-cart-btn">Update Cart</button> --> <!-- Optional -->
+                            
                         </div>
                     </div>
 
@@ -154,16 +133,13 @@
                         <h2 class="summary-title">Cart Totals</h2>
                         <div class="summary-row">
                             <span>Subtotal</span>
-                            <span class="summary-value">₹95.00</span> <!-- Calculated by JS/PHP -->
+                            <span class="summary-value">₹95.00</span> 
                         </div>
                          <div class="summary-row">
                             <span>Shipping</span>
                              <span class="summary-value">Calculated at checkout</span>
                          </div>
-                         <!-- <div class="summary-row">
-                            <span>Tax</span>
-                            <span class="summary-value">Calculated at checkout</span>
-                         </div> -->
+                        
                          <hr class="summary-divider">
                          <div class="summary-row total-row">
                             <span>Total</span>
@@ -172,32 +148,16 @@
                          <a href="checkout.html" class="btn btn-primary btn-block checkout-btn">Proceed to Checkout</a>
                     </div>
 
-                </div> <!-- End cart-container -->
-
-                <!-- Placeholder for Empty Cart Message (PHP would show this conditionally) -->
-                <!--
-                <div class="cart-empty text-center">
-                    <p>Your cart is currently empty.</p>
-                    <a href="shop-all.html" class="btn btn-primary">Return to Shop</a>
-                </div>
-                -->
+                </div> 
 
             </div>
         </section>
-        <!-- ============================================= -->
-        <!-- END OF SHOPPING CART AREA                   -->
-        <!-- ============================================= -->
+
 
 
     </main>
-    <!-- ============================================= -->
-    <!-- END OF MAIN CONTENT AREA                      -->
-    <!-- ============================================= -->
 
 
-    <!-- ============================================= -->
-    <!-- FOOTER SECTION (Same as index.html)         -->
-    <!-- ============================================= -->
     <footer class="site-footer section-padding">
         <div class="container footer-container">
              <div class="footer-column about-column"> <h4 class="footer-heading">Artisan Collective</h4> <p>Your source for authentic, locally crafted goods. Supporting artisans and celebrating creativity.</p> <div class="social-links"> <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a> <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a> <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a> </div> </div>
@@ -209,12 +169,10 @@
              <p class="copyright-text">© <span id="current-year"></span> Artisan Collective. All Rights Reserved.</p>
          </div>
     </footer>
-    <!-- ============================================= -->
-    <!-- END OF FOOTER SECTION                         -->
-    <!-- ============================================= -->
+
 
     <script src="js/main.js"></script>
-    <!-- Add specific cart JS if needed for quantity/remove placeholders -->
+
     <script src="js/cart.js"></script>
 </body>
 </html>

@@ -1,38 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // =============================================
-    // FOOTER - CURRENT YEAR
-    // =============================================
+
     const currentYearSpan = document.getElementById('current-year');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
 
-    // =============================================
-    // MOBILE NAVIGATION TOGGLE
-    // =============================================
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const primaryNav = document.getElementById('primary-navigation');
     const body = document.body;
 
     if (mobileNavToggle && primaryNav) {
         mobileNavToggle.addEventListener('click', () => {
-            // Check if the menu is currently shown
-            const isExpanded = primaryNav.classList.contains('active'); // Use class check instead of aria
-
-            // Toggle the 'active' class on the nav list
+            
+            const isExpanded = primaryNav.classList.contains('active'); 
             primaryNav.classList.toggle('active');
-            // Toggle the 'active' class on the button (for icon change maybe)
+
             mobileNavToggle.classList.toggle('active');
-            // Toggle 'no-scroll' on body
+
             body.classList.toggle('no-scroll');
 
-            // Update aria-expanded for screen readers based on the NEW state
+           
             mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
-            primaryNav.setAttribute('aria-expanded', !isExpanded); // Keep this one too
+            primaryNav.setAttribute('aria-expanded', !isExpanded); 
 
-
-             // Change icon from hamburger to 'X' and back
              const icon = mobileNavToggle.querySelector('i');
              if(icon) {
                 icon.classList.toggle('fa-bars');
@@ -41,9 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // =============================================
-    // HEADER SEARCH TOGGLE
-    // =============================================
+
      const searchToggle = document.querySelector('.search-toggle');
      const searchBar = document.querySelector('.search-bar');
 
@@ -64,16 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
          });
      }
 
-    /* 
-       Removed the advanced dropdown keyboard navigation script.
-       Dropdowns will rely solely on CSS :hover and :focus-within for desktop.
-       Mobile view CSS handles sub-menu display differently. 
-    */
 
-
-    // =============================================
-    // 'ADD TO CART' FUNCTIONALITY (Placeholder)
-    // =============================================
     const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
     const cartCountSpan = document.querySelector('.cart-count');
     let cartItemCount = 0; // Dummy count
@@ -83,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const productId = event.target.dataset.productId;
             console.log("Add to cart button clicked for product ID:", productId);
 
-            // --- Basic Placeholder Interaction ---
             cartItemCount++;
             if (cartCountSpan) {
                 cartCountSpan.textContent = cartItemCount;
@@ -106,4 +85,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-}); // End DOMContentLoaded
+}); 

@@ -122,10 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
          }
     }
 
-    // --- Placeholder for Account/Address Form Submission (AJAX Recommended) ---
-    // You would typically intercept the 'submit' event, prevent default,
-    // use FormData or serialize the form, send via fetch/XHR to your PHP script,
-    // handle the response (update UI, show success/error messages).
+
 
     function handleFormSubmission(formElement, statusDiv) {
         if (!formElement || !statusDiv) return;

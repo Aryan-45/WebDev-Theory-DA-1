@@ -1,8 +1,8 @@
 <?php
-// login.php
+
 session_start();
 
-// If user is already logged in, redirect them away from login
+
 if (isset($_SESSION['user_id'])) {
     header('Location: account.php');
     exit;
@@ -10,12 +10,11 @@ if (isset($_SESSION['user_id'])) {
 
 require_once __DIR__ . '/php/config.php';
 
-// Check for login status messages stored in session
 $error_message = $_SESSION['error_message'] ?? null;
-$success_message = $_SESSION['success_message'] ?? null; // e.g., after registration
-$form_data = $_SESSION['form_data'] ?? []; // Preserve email on error
+$success_message = $_SESSION['success_message'] ?? null; 
+$form_data = $_SESSION['form_data'] ?? []; 
 
-// Clear messages after displaying them once
+
 unset($_SESSION['error_message'], $_SESSION['success_message'], $_SESSION['form_data']);
 
 ?>
@@ -26,22 +25,18 @@ unset($_SESSION['error_message'], $_SESSION['success_message'], $_SESSION['form_
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Artisan Collective</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome (for icons) -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Our Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- ============================================= -->
-    <!-- HEADER & NAVIGATION (Modified for Login State) -->
-    <!-- ============================================= -->
+
      <header class="site-header">
         <div class="container header-container">
             <div class="logo"> <a href="index.php">Artisan Collective</a> </div>
@@ -65,17 +60,9 @@ unset($_SESSION['error_message'], $_SESSION['success_message'], $_SESSION['form_
             <div class="search-bar"> <form action="/search" method="get"> <input type="search" name="query" placeholder="Search products & artisans..." aria-label="Search products and artisans"> <button type="submit">Search</button> </form> </div>
         </div>
     </header>
-    <!-- ============================================= -->
-    <!-- END OF HEADER & NAVIGATION                   -->
-    <!-- ============================================= -->
 
-    <!-- ============================================= -->
-    <!-- MAIN CONTENT AREA                             -->
-    <!-- ============================================= -->
     <main>
-        <!-- ============================================= -->
-        <!-- BREADCRUMBS & TITLE                         -->
-        <!-- ============================================= -->
+
         <section class="page-header section-padding bg-medium">
             <div class="container">
                 <nav aria-label="breadcrumb" class="breadcrumbs">
@@ -87,20 +74,14 @@ unset($_SESSION['error_message'], $_SESSION['success_message'], $_SESSION['form_
                 <h1 class="page-title">Login</h1>
             </div>
         </section>
-        <!-- ============================================= -->
-        <!-- END OF BREADCRUMBS & TITLE                  -->
-        <!-- ============================================= -->
 
-        <!-- ============================================= -->
-        <!-- LOGIN FORM SECTION                          -->
-        <!-- ============================================= -->
         <section class="auth-section section-padding">
             <div class="container">
                  <div class="auth-form-container">
                      <h2>Welcome Back!</h2>
                      <p>Log in to access your account dashboard and orders.</p>
 
-                     <!-- Display feedback messages -->
+                     
                     <?php if ($error_message): ?>
                         <div id="auth-status" class="error" role="alert"><?php echo htmlspecialchars($error_message); ?></div>
                     <?php endif; ?>
@@ -110,7 +91,7 @@ unset($_SESSION['error_message'], $_SESSION['success_message'], $_SESSION['form_
 
 
                      <form id="login-form" action="php/process-login.php" method="POST" class="site-form">
-                         <!-- Honeypot -->
+                         
                          <div class="form-group visually-hidden">
                              <label for="login-honeypot">Leave empty</label>
                              <input type="text" id="login-honeypot" name="honeypot" tabindex="-1" autocomplete="off">
@@ -127,10 +108,7 @@ unset($_SESSION['error_message'], $_SESSION['success_message'], $_SESSION['form_
                          </div>
 
                          <div class="form-group form-meta">
-                            <!-- Optional: Add Remember Me checkbox -->
-                            <!-- <label class="remember-me">
-                                <input type="checkbox" name="remember_me" value="1"> Remember Me
-                            </label> -->
+
                             <a href="forgot-password.php" class="forgot-password-link">Lost your password?</a>
                          </div>
 
@@ -145,19 +123,11 @@ unset($_SESSION['error_message'], $_SESSION['success_message'], $_SESSION['form_
                  </div>
             </div>
         </section>
-        <!-- ============================================= -->
-        <!-- END OF LOGIN FORM SECTION                   -->
-        <!-- ============================================= -->
-    </main>
-    <!-- ============================================= -->
-    <!-- END OF MAIN CONTENT AREA                      -->
-    <!-- ============================================= -->
 
-    <!-- ============================================= -->
-    <!-- FOOTER SECTION (Same as index.php)         -->
-    <!-- ============================================= -->
+    </main>
+
     <footer class="site-footer section-padding">
-         <!-- Footer content copied from index.php -->
+
           <div class="container footer-container">
              <div class="footer-column about-column"> <h4 class="footer-heading">Artisan Collective</h4> <p>Your source for authentic, locally crafted goods. Supporting artisans and celebrating creativity.</p> <div class="social-links"> <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a> <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a> <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a> </div> </div>
              <div class="footer-column links-column"> <h4 class="footer-heading">Quick Links</h4> <ul class="footer-list"> <li><a href="about.php">About Us</a></li> <li><a href="shop-all.php">Shop All</a></li> <li><a href="artisans.php">Our Artisans</a></li> <li><a href="contact.php">Contact Us</a></li> <li><a href="sell-with-us.php">Sell With Us</a></li> </ul> </div>
@@ -168,11 +138,9 @@ unset($_SESSION['error_message'], $_SESSION['success_message'], $_SESSION['form_
              <p class="copyright-text">© <span id="current-year"></span> Artisan Collective. All Rights Reserved.</p>
          </div>
     </footer>
-    <!-- ============================================= -->
-    <!-- END OF FOOTER SECTION                         -->
-    <!-- ============================================= -->
+
 
     <script src="js/main.js"></script>
-     <!-- No specific JS needed for login page currently -->
+
 </body>
 </html>

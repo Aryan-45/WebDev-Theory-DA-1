@@ -10,9 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const MAX_FILES = 5;
     const MAX_SIZE_MB = 2; // Max size per file
     const MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
-    // You could also add a total max size if desired
-    // const TOTAL_MAX_SIZE_MB = 10;
-    // const TOTAL_MAX_SIZE_BYTES = TOTAL_MAX_SIZE_MB * 1024 * 1024;
     const ALLOWED_TYPES = ['image/jpeg', 'image/png']; // MIME types
 
     // Attach listener to file input
@@ -20,13 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
         fileInput.addEventListener('change', handleFileValidation);
     }
 
-    // Attach listener to form submit
     if (form) {
         form.addEventListener('submit', (e) => {
             // Re-validate files on submit, prevent if invalid
             if (!handleFileValidation()) {
-                e.preventDefault(); // Stop form submission
-                // alert(`Please fix the errors in the file uploads before submitting.`); // Optional alert
+                e.preventDefault(); 
                 fileFeedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 applicationStatusDiv.textContent = 'Please fix the errors in the file uploads.';
                 applicationStatusDiv.className = 'error'; // Add error styling
@@ -104,11 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
         fileFeedback.textContent = ''; // Clear previous feedback
         fileFeedback.className = 'file-feedback'; // Reset class
 
-        // Check if required and no files selected (though browser might handle this first)
         if (files.length === 0 && fileInput.required) {
-            // errors.push('At least one portfolio image is required.');
-            // Let browser handle 'required' validation on submit for now.
-            return true; // Don't show error just on change if empty initially
+            return true; 
         }
 
         if (files.length > MAX_FILES) {
@@ -138,10 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (errors.length > 0) {
             fileFeedback.innerHTML = errors.join('<br>'); // Display errors
-            fileFeedback.classList.add('error'); // Add error styling
-             // Optionally clear the file input's value if validation fails severely
-             // fileInput.value = ''; // This resets the selection
-            return false; // Indicates validation failed
+            fileFeedback.classList.add('error'); 
+            return false; 
         } else if (files.length > 0) {
             // Provide positive feedback if files are selected and valid
             fileFeedback.textContent = `${files.length} file(s) selected. Ready to upload!`;
@@ -149,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return true; // Indicates validation passed
         }
 
-        // Return true if no files selected (and not required) or if valid
+
         return true;
     }
 

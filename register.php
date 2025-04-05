@@ -1,21 +1,16 @@
 <?php
-// register.php
-session_start(); // Start session to access potential error messages
 
-// If user is already logged in, redirect them away from registration
+session_start(); 
+
 if (isset($_SESSION['user_id'])) {
-    header('Location: account.php'); // Redirect to account page
+    header('Location: account.php'); 
     exit;
 }
 
-require_once __DIR__ . '/php/config.php'; // Include config if needed (e.g., for SITE_URL)
-
-// Check for registration status messages stored in session
+require_once __DIR__ . '/php/config.php'; 
 $error_message = $_SESSION['error_message'] ?? null;
 $success_message = $_SESSION['success_message'] ?? null;
-$form_data = $_SESSION['form_data'] ?? []; // Preserve form data on error
-
-// Clear messages after displaying them once
+$form_data = $_SESSION['form_data'] ?? []; 
 unset($_SESSION['error_message'], $_SESSION['success_message'], $_SESSION['form_data']);
 ?>
 <!DOCTYPE html>
@@ -25,22 +20,19 @@ unset($_SESSION['error_message'], $_SESSION['success_message'], $_SESSION['form_
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Artisan Collective</title>
 
-    <!-- Google Fonts -->
+ 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome (for icons) -->
+ 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Our Stylesheet -->
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- ============================================= -->
-    <!-- HEADER & NAVIGATION (Modified for Login State) -->
-    <!-- ============================================= -->
      <header class="site-header">
         <div class="container header-container">
             <div class="logo"> <a href="index.php">Artisan Collective</a> </div>
@@ -64,17 +56,9 @@ unset($_SESSION['error_message'], $_SESSION['success_message'], $_SESSION['form_
             <div class="search-bar"> <form action="/search" method="get"> <input type="search" name="query" placeholder="Search products & artisans..." aria-label="Search products and artisans"> <button type="submit">Search</button> </form> </div>
         </div>
     </header>
-    <!-- ============================================= -->
-    <!-- END OF HEADER & NAVIGATION                   -->
-    <!-- ============================================= -->
 
-    <!-- ============================================= -->
-    <!-- MAIN CONTENT AREA                             -->
-    <!-- ============================================= -->
     <main>
-        <!-- ============================================= -->
-        <!-- BREADCRUMBS & TITLE                         -->
-        <!-- ============================================= -->
+ 
         <section class="page-header section-padding bg-medium">
             <div class="container">
                 <nav aria-label="breadcrumb" class="breadcrumbs">
@@ -86,13 +70,7 @@ unset($_SESSION['error_message'], $_SESSION['success_message'], $_SESSION['form_
                 <h1 class="page-title">Create Account</h1>
             </div>
         </section>
-        <!-- ============================================= -->
-        <!-- END OF BREADCRUMBS & TITLE                  -->
-        <!-- ============================================= -->
-
-        <!-- ============================================= -->
-        <!-- REGISTRATION FORM SECTION                   -->
-        <!-- ============================================= -->
+ 
         <section class="auth-section section-padding">
             <div class="container">
                 <div class="auth-form-container">
@@ -158,19 +136,11 @@ unset($_SESSION['error_message'], $_SESSION['success_message'], $_SESSION['form_
                 </div>
             </div>
         </section>
-        <!-- ============================================= -->
-        <!-- END OF REGISTRATION FORM SECTION            -->
-        <!-- ============================================= -->
-    </main>
-    <!-- ============================================= -->
-    <!-- END OF MAIN CONTENT AREA                      -->
-    <!-- ============================================= -->
 
-    <!-- ============================================= -->
-    <!-- FOOTER SECTION (Same as index.php)         -->
-    <!-- ============================================= -->
+    </main>
+ 
     <footer class="site-footer section-padding">
-        <!-- Footer content copied from index.php -->
+ 
          <div class="container footer-container">
              <div class="footer-column about-column"> <h4 class="footer-heading">Artisan Collective</h4> <p>Your source for authentic, locally crafted goods. Supporting artisans and celebrating creativity.</p> <div class="social-links"> <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a> <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a> <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a> </div> </div>
              <div class="footer-column links-column"> <h4 class="footer-heading">Quick Links</h4> <ul class="footer-list"> <li><a href="about.php">About Us</a></li> <li><a href="shop-all.php">Shop All</a></li> <li><a href="artisans.php">Our Artisans</a></li> <li><a href="contact.php">Contact Us</a></li> <li><a href="sell-with-us.php">Sell With Us</a></li> </ul> </div>
@@ -181,11 +151,8 @@ unset($_SESSION['error_message'], $_SESSION['success_message'], $_SESSION['form_
              <p class="copyright-text">© <span id="current-year"></span> Artisan Collective. All Rights Reserved.</p>
          </div>
     </footer>
-    <!-- ============================================= -->
-    <!-- END OF FOOTER SECTION                         -->
-    <!-- ============================================= -->
 
     <script src="js/main.js"></script>
-    <!-- No specific JS needed for registration page currently -->
+
 </body>
 </html>

@@ -5,30 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artisan Collective - Locally Crafted Handmade Goods</title>
 
-    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome (for icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Our Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Add favicon links here later -->
 
 </head>
 <body>
 
-    <!-- ============================================= -->
-    <!-- HEADER & NAVIGATION                           -->
-    <!-- ============================================= -->
+
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">
                 <a href="index.html">Artisan Collective</a>
-                <!-- <a href="index.html"><img src="images/logo.png" alt="Artisan Collective"></a> -->
+               
             </div>
 
             <nav class="main-navigation" aria-label="Main Navigation">
@@ -39,7 +34,7 @@
 
                 <ul id="primary-navigation" class="nav-list">
                     <li class="nav-item dropdown">
-                        <!-- Removed aria-haspopup -->
+
                         <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down fa-xs"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="shop-all.html">Shop All</a></li>
@@ -48,7 +43,7 @@
                             <li><a href="category-textiles.html">Textiles</a></li>
                             <li><a href="category-jewelry.html">Jewelry</a></li>
                             <li><a href="category-woodwork.html">Woodwork</a></li>
-                            <!-- PHP will add more later -->
+
                         </ul>
                     </li>
                     <li class="nav-item"><a href="artisans.html" class="nav-link">Artisans</a></li>
@@ -77,19 +72,10 @@
              </div>
         </div>
     </header>
-    <!-- ============================================= -->
-    <!-- END OF HEADER & NAVIGATION                   -->
-    <!-- ============================================= -->
 
-
-    <!-- ============================================= -->
-    <!-- MAIN CONTENT AREA                             -->
-    <!-- ============================================= -->
     <main>
 
-        <!-- ============================================= -->
-        <!-- HERO SECTION                                -->
-        <!-- ============================================= -->
+
         <section class="hero">
             <div class="container hero-content">
                 <h1>Discover Authentic Local Craftsmanship</h1>
@@ -97,14 +83,7 @@
                 <a href="shop-all.html" class="btn btn-primary btn-lg">Explore All Products</a>
             </div>
         </section>
-        <!-- ============================================= -->
-        <!-- END OF HERO SECTION                         -->
-        <!-- ============================================= -->
 
-
-        <!-- ============================================= -->
-        <!-- CATEGORIES SHOWCASE SECTION                 -->
-        <!-- ============================================= -->
         <section class="categories-showcase section-padding">
             <div class="container">
                 <h2 class="section-title text-center">Browse by Category</h2>
@@ -125,23 +104,16 @@
                         <img src="https://st4.depositphotos.com/19463018/30997/i/450/depositphotos_309975800-stock-photo-photo-traditional-handicraft-woodwork-wooden.jpg" alt="Carved woodwork">
                         <h3>Woodwork</h3>
                     </a>
-                    <!-- Add more category cards here -->
+
                 </div>
             </div>
         </section>
-        <!-- ============================================= -->
-        <!-- END OF CATEGORIES SHOWCASE SECTION          -->
-        <!-- ============================================= -->
 
-
-        <!-- ============================================= -->
-        <!-- FEATURED PRODUCTS SECTION                   -->
-        <!-- ============================================= -->
         <section class="featured-products section-padding bg-medium">
              <div class="container">
                 <h2 class="section-title text-center">New Arrivals</h2>
                 <div class="product-grid">
-                    <!-- Product Card Example 1 -->
+
                     <article class="product-card">
                         <a href="product-detail.html" class="product-link">
                             <img src="https://rareplanet.com/cdn/shop/files/ssyykOSr_1.jpg?v=1720687709" alt="Hand-thrown Ceramic Mug" class="product-image">
@@ -154,7 +126,7 @@
                         <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="1">Add to Cart</button>
                     </article>
 
-                    <!-- Product Card Example 2 -->
+
                      <article class="product-card">
                         <a href="product-detail.html" class="product-link">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPAwA59vmoTBvyJ8tKSeYwNq_cPndddo1ZUg&s" alt="Woven Cotton Scarf" class="product-image">
@@ -167,7 +139,7 @@
                          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="2">Add to Cart</button>
                     </article>
 
-                    <!-- Product Card Example 3 -->
+
                     <article class="product-card">
                          <a href="product-detail.html" class="product-link">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKu4BDsrxsdpSUt8KNqWFVWhrHmbUzZ2aPaw&s" alt="Silver Leaf Earrings" class="product-image">
@@ -180,7 +152,7 @@
                         <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="3">Add to Cart</button>
                     </article>
 
-                    <!-- Product Card Example 4 -->
+
                     <article class="product-card">
                         <a href="product-detail.html" class="product-link">
                            <img src="https://www.kashmirbox.com/cdn/shop/files/kb6155_1.jpg?v=1740553289" alt="Hand Carved Bowl" class="product-image">
@@ -193,21 +165,13 @@
                        <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="4">Add to Cart</button>
                    </article>
 
-                    <!-- More product cards here -->
                 </div>
                 <div class="text-center view-all-link">
                     <a href="shop-all.html" class="btn btn-outline">View All Products</a>
                 </div>
             </div>
         </section>
-        <!-- ============================================= -->
-        <!-- END OF FEATURED PRODUCTS SECTION            -->
-        <!-- ============================================= -->
 
-
-        <!-- ============================================= -->
-        <!-- ARTISAN SPOTLIGHT / MISSION SECTION         -->
-        <!-- ============================================= -->
         <section class="mission-spotlight section-padding">
             <div class="container mission-container">
                  <div class="mission-image">
@@ -221,19 +185,10 @@
                  </div>
             </div>
         </section>
-        <!-- ============================================= -->
-        <!-- END OF ARTISAN SPOTLIGHT / MISSION SECTION  -->
-        <!-- ============================================= -->
+
 
     </main>
-    <!-- ============================================= -->
-    <!-- END OF MAIN CONTENT AREA                      -->
-    <!-- ============================================= -->
 
-
-    <!-- ============================================= -->
-    <!-- FOOTER SECTION                                -->
-    <!-- ============================================= -->
     <footer class="site-footer section-padding">
         <div class="container footer-container">
             <div class="footer-column about-column">
@@ -281,9 +236,6 @@
              <p class="copyright-text">© <span id="current-year"></span> Artisan Collective. All Rights Reserved.</p>
          </div>
     </footer>
-    <!-- ============================================= -->
-    <!-- END OF FOOTER SECTION                         -->
-    <!-- ============================================= -->
 
     <script src="js/main.js"></script>
 </body>
