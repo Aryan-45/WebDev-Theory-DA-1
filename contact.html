@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Artisan Collective</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Our Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+
+    <!-- ============================================= -->
+    <!-- HEADER & NAVIGATION (Same as index.html)    -->
+    <!-- ============================================= -->
+     <header class="site-header">
+        <div class="container header-container">
+            <div class="logo"> <a href="index.html">Artisan Collective</a> </div>
+            <nav class="main-navigation" aria-label="Main Navigation">
+                 <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"> <span class="sr-only">Menu</span> <i class="fas fa-bars hamburger-icon"></i> </button>
+                <ul id="primary-navigation" class="nav-list">
+                    <li class="nav-item dropdown"> <a href="shop-all.html" class="nav-link">Shop <i class="fas fa-chevron-down fa-xs"></i></a> <ul class="dropdown-menu"> <li><a href="shop-all.html">Shop All</a></li> <li><hr class="dropdown-divider"></li> <li><a href="category-pottery.html">Pottery</a></li> <li><a href="category-textiles.html">Textiles</a></li> <li><a href="category-jewelry.html">Jewelry</a></li> <li><a href="category-woodwork.html">Woodwork</a></li> </ul> </li>
+                    <li class="nav-item"><a href="artisans.html" class="nav-link">Artisans</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">Our Story</a></li>
+                    <!-- Optionally add a dedicated 'Contact' link here and mark it active -->
+                    <!-- <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li> -->
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="search-toggle" aria-label="Search"> <i class="fas fa-search"></i> </button>
+                <a href="account.html" class="action-link" aria-label="My Account"> <i class="fas fa-user"></i> </a>
+                <a href="cart.html" class="action-link" aria-label="Shopping Cart"> <i class="fas fa-shopping-bag"></i> <span class="cart-count" aria-hidden="true">0</span> </a>
+            </div>
+            <div class="search-bar"> <form action="/search" method="get"> <input type="search" name="query" placeholder="Search products & artisans..." aria-label="Search products and artisans"> <button type="submit">Search</button> </form> </div>
+        </div>
+    </header>
+    <!-- ============================================= -->
+    <!-- END OF HEADER & NAVIGATION                   -->
+    <!-- ============================================= -->
+
+
+    <!-- ============================================= -->
+    <!-- MAIN CONTENT AREA                             -->
+    <!-- ============================================= -->
+    <main>
+
+         <!-- ============================================= -->
+        <!-- BREADCRUMBS & TITLE                         -->
+        <!-- ============================================= -->
+        <section class="page-header section-padding bg-medium">
+            <div class="container">
+                <nav aria-label="breadcrumb" class="breadcrumbs">
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li><span aria-current="page">Contact Us</span></li>
+                    </ol>
+                </nav>
+                <h1 class="page-title">Get In Touch</h1>
+            </div>
+        </section>
+        <!-- ============================================= -->
+        <!-- END OF BREADCRUMBS & TITLE                  -->
+        <!-- ============================================= -->
+
+
+        <!-- ============================================= -->
+        <!-- CONTACT FORM SECTION                        -->
+        <!-- ============================================= -->
+        <section class="contact-section section-padding">
+            <div class="container contact-container">
+
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p>Have questions? We'd love to hear from you. Reach out via the form or use the details below.</p>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Craft Lane, Artisanville, AC 45678</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+15551234567">(555) 123-4567</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:hello@artisancollective.example">hello@artisancollective.example</a></li>
+                    </ul>
+                    <!-- Optional: Add map embed here
+                    <div class="map-embed" style="margin-top: 20px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                     -->
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h2>Send Us a Message</h2>
+                    <!-- The action attribute will point to your PHP handler script -->
+                    <form id="contact-form" action="php/process-contact.php" method="POST" class="site-form">
+                         <!-- Add a hidden field for basic spam prevention (honeypot) -->
+                         <div class="form-group visually-hidden">
+                             <label for="honeypot">Leave this field empty</label>
+                             <input type="text" id="honeypot" name="honeypot" tabindex="-1" autocomplete="off">
+                         </div>
+
+                        <div class="form-group">
+                            <label for="contact-name">Your Name <span class="required">*</span></label>
+                            <input type="text" id="contact-name" name="name" required class="form-control" placeholder="e.g., Jane Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-email">Your Email <span class="required">*</span></label>
+                            <input type="email" id="contact-email" name="email" required class="form-control" placeholder="e.g., jane.doe@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="subject" class="form-control" placeholder="e.g., Question about an order">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message">Message <span class="required">*</span></label>
+                            <textarea id="contact-message" name="message" rows="6" required class="form-control" placeholder="Write your message here..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                           <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                    <!-- Placeholder for success/error messages from PHP -->
+                    <div id="form-status" role="alert" aria-live="polite"></div>
+                </div>
+
+            </div> <!-- End contact-container -->
+        </section>
+        <!-- ============================================= -->
+        <!-- END OF CONTACT FORM SECTION                 -->
+        <!-- ============================================= -->
+
+    </main>
+    <!-- ============================================= -->
+    <!-- END OF MAIN CONTENT AREA                      -->
+    <!-- ============================================= -->
+
+
+    <!-- ============================================= -->
+    <!-- FOOTER SECTION (Same as index.html)         -->
+    <!-- ============================================= -->
+    <footer class="site-footer section-padding">
+        <div class="container footer-container">
+             <div class="footer-column about-column"> <h4 class="footer-heading">Artisan Collective</h4> <p>Your source for authentic, locally crafted goods. Supporting artisans and celebrating creativity.</p> <div class="social-links"> <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a> <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a> <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a> </div> </div>
+             <div class="footer-column links-column"> <h4 class="footer-heading">Quick Links</h4> <ul class="footer-list"> <li><a href="about.html">About Us</a></li> <li><a href="shop-all.html">Shop All</a></li> <li><a href="artisans.html">Our Artisans</a></li> <li><a href="contact.html">Contact Us</a></li> <li><a href="sell-with-us.html">Sell With Us</a></li> </ul> </div>
+             <div class="footer-column links-column"> <h4 class="footer-heading">Customer Service</h4> <ul class="footer-list"> <li><a href="faq.html">FAQ</a></li> <li><a href="shipping.html">Shipping & Returns</a></li> <li><a href="privacy.html">Privacy Policy</a></li> <li><a href="terms.html">Terms & Conditions</a></li> </ul> </div>
+             <div class="footer-column newsletter-column"> <h4 class="footer-heading">Stay Connected</h4> <p>Get updates on new arrivals and special promotions.</p> <form class="newsletter-form"> <input type="email" placeholder="Enter your email" aria-label="Enter your email for newsletter signup"> <button type="submit" class="btn btn-primary btn-sm">Subscribe</button> </form> </div>
+        </div>
+         <div class="container copyright-container">
+             <p class="copyright-text">© <span id="current-year"></span> Artisan Collective. All Rights Reserved.</p>
+         </div>
+    </footer>
+    <!-- ============================================= -->
+    <!-- END OF FOOTER SECTION                         -->
+    <!-- ============================================= -->
+
+    <script src="js/main.js"></script>
+    <!-- Add specific JS for contact form if needed (e.g., AJAX submission) -->
+    <!-- <script src="js/contact.js"></script> -->
+</body>
+</html>

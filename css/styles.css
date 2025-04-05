@@ -1,0 +1,1711 @@
+/* ============================================= */
+/* CSS RESET & BASIC SETUP                     */
+/* ============================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif; /* Direct font name */
+  line-height: 1.6;
+  color: #36454F; /* Direct color */
+  background-color: #F5F5DC; /* Direct color */
+  font-size: 16px;
+}
+
+/* Prevent scrolling when mobile menu is open */
+body.no-scroll {
+    overflow: hidden;
+}
+
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif; /* Direct font name */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px; /* Direct pixel value (approx 0.75em) */
+}
+
+h1 { font-size: 40px; /* Direct pixel value (approx 2.5rem) */}
+h2 { font-size: 32px; /* Direct pixel value (approx 2rem) */}
+h3 { font-size: 24px; /* Direct pixel value (approx 1.5rem) */}
+h4 { font-size: 19px; /* Direct pixel value (approx 1.2rem) */}
+
+
+/* ============================================= */
+/* UTILITY CLASSES                             */
+/* ============================================= */
+.container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px; /* Direct pixel value */
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-padding {
+  padding-top: 48px; /* Direct pixel value */
+  padding-bottom: 48px; /* Direct pixel value */
+}
+
+.bg-medium {
+  background-color: #E8E4D5; /* Direct color */
+}
+
+.sr-only { /* Screen Reader only text */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* Basic visually hidden class for things like honeypots */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 12px 24px; /* Direct pixel value */
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 5px; /* Direct pixel value */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px; /* Direct pixel value */
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: #A0522D; /* Direct color */
+  color: #F8F8F8; /* Direct color */
+  border-color: #A0522D; /* Direct color */
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #8B4513; /* Slightly darker brown */
+  border-color: #8B4513;
+  color: #F8F8F8;
+}
+
+.btn-secondary {
+  background-color: #2F4F4F; /* Direct color */
+  color: #F8F8F8; /* Direct color */
+  border-color: #2F4F4F;
+}
+.btn-secondary:hover, .btn-secondary:focus {
+  background-color: #4F6F6F; /* Slightly lighter green/gray */
+  border-color: #4F6F6F;
+  color: #F8F8F8;
+}
+
+.btn-outline {
+   background-color: transparent;
+   color: #A0522D; /* Direct color */
+   border-color: #A0522D; /* Direct color */
+}
+.btn-outline:hover, .btn-outline:focus {
+    background-color: #A0522D;
+    color: #F8F8F8;
+}
+
+.btn-sm {
+    padding: 6px 16px; /* Direct pixel value */
+    font-size: 14px; /* Direct pixel value */
+}
+.btn-lg {
+    padding: 16px 32px; /* Direct pixel value */
+    font-size: 18px; /* Direct pixel value */
+}
+.btn-block { /* Utility for full width */
+    display: block;
+    width: 100%;
+}
+
+
+/* ============================================= */
+/* HEADER & NAVIGATION STYLES                   */
+/* ============================================= */
+.site-header {
+  background-color: #F5F5DC; /* Direct color */
+  padding: 8px 0; /* Direct pixel value */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo a {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-size: 24px; /* Direct pixel value */
+  color: #36454F; /* Direct color */
+}
+.logo img {
+    max-height: 40px;
+}
+
+.main-navigation .nav-list {
+  display: flex;
+  gap: 24px; /* Direct pixel value */
+}
+
+.main-navigation .nav-link {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  color: #36454F;
+  padding: 8px 0; /* Direct pixel value */
+  position: relative;
+  display: inline-flex; /* Align icon correctly */
+  align-items: center;
+  gap: 6px; /* Space between text and icon */
+}
+
+.main-navigation .nav-link:hover,
+.main-navigation .nav-link:focus,
+.main-navigation .nav-item.active .nav-link, /* Style active menu item */
+.main-navigation .nav-link.active { /* Also allow direct 'active' class */
+  color: #A0522D; /* Direct color */
+}
+
+/* Basic Dropdown Styles */
+.nav-item.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff; /* Direct color */
+  border: 1px solid #cccccc; /* Direct color */
+  border-radius: 5px; /* Direct pixel value */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 8px 0; /* Direct pixel value */
+  min-width: 180px;
+  z-index: 1001;
+}
+
+/* Show dropdown on hover/focus-within */
+.nav-item.dropdown:hover > .dropdown-menu, /* Direct child only */
+.nav-item.dropdown:focus-within > .dropdown-menu {
+  display: block;
+}
+
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 16px; /* Direct pixel value */
+  color: #36454F; /* Direct color */
+  font-size: 15px; /* Direct pixel value */
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
+  background-color: #E8E4D5; /* Direct color */
+  color: #A0522D; /* Direct color */
+}
+.dropdown-divider {
+    height: 1px;
+    margin: 8px 0; /* Direct pixel value */
+    overflow: hidden;
+    background-color: #cccccc; /* Direct color */
+    border: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Direct pixel value */
+}
+
+.header-actions .action-link,
+.header-actions .search-toggle {
+  font-size: 19px; /* Direct pixel value */
+  color: #36454F; /* Direct color */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px; /* Direct pixel value */
+  position: relative;
+}
+.header-actions .action-link:hover,
+.header-actions .action-link:focus,
+.header-actions .search-toggle:hover,
+.header-actions .search-toggle:focus {
+  color: #A0522D; /* Direct color */
+}
+
+/* Style active action icon */
+.header-actions .action-link.active {
+     color: #A0522D; /* Primary color for active icon */
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #A0522D; /* Direct color */
+    color: #F8F8F8; /* Direct color */
+    font-size: 11px; /* Direct pixel value */
+    font-weight: bold;
+    border-radius: 50%;
+    min-width: 18px; /* Use min-width */
+    height: 18px;
+    padding: 0 3px; /* Add slight horizontal padding */
+    display: none; /* Hidden by default, shown by JS */
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+
+/* Search Bar */
+.search-bar {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 500px;
+    background-color: #ffffff; /* Direct color */
+    padding: 16px; /* Direct pixel value */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 5px; /* Direct pixel value */
+    z-index: 1000;
+}
+.search-bar form {
+    display: flex;
+}
+.search-bar input[type="search"] {
+    flex-grow: 1;
+    padding: 8px 16px; /* Direct pixel value */
+    border: 1px solid #cccccc; /* Direct color */
+    border-right: none; /* Remove right border */
+    border-radius: 5px 0 0 5px; /* Direct pixel value */
+    font-size: 16px; /* Direct pixel value */
+}
+.search-bar input[type="search"]:focus {
+    outline: none;
+    border-color: #A0522D; /* Highlight on focus */
+}
+
+.search-bar button[type="submit"] {
+    padding: 8px 16px; /* Direct pixel value */
+    border: 1px solid #A0522D; /* Direct color */
+    background-color: #A0522D; /* Direct color */
+    color: #F8F8F8; /* Direct color */
+    border-radius: 0 5px 5px 0; /* Direct pixel value */
+    cursor: pointer;
+    font-size: 16px; /* Direct pixel value */
+    transition: background-color 0.3s ease;
+}
+.search-bar button[type="submit"]:hover {
+    background-color: #8B4513; /* Darker brown */
+}
+
+/* Mobile Navigation */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px; /* Direct pixel value */
+    color: #36454F; /* Direct color */
+    cursor: pointer;
+    z-index: 1100;
+    padding: 8px; /* Add some padding for easier clicking */
+}
+
+
+/* ============================================= */
+/* END OF HEADER & NAVIGATION STYLES            */
+/* ============================================= */
+
+
+/* ============================================= */
+/* HERO SECTION STYLES                           */
+/* ============================================= */
+.hero {
+    background-color: #2F4F4F; /* Direct color */
+    /* Example with image + overlay */
+    /* background-image: linear-gradient(rgba(47, 79, 79, 0.6), rgba(47, 79, 79, 0.6)), url('https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); */
+    background-size: cover;
+    background-position: center center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #F8F8F8; /* Direct color */
+    padding: 48px 16px; /* Direct pixel value */
+}
+
+.hero-content h1 {
+    font-size: 48px; /* Direct pixel value */
+    margin-bottom: 16px; /* Direct pixel value */
+    font-weight: 700;
+    color: #ffffff; /* Direct color */
+}
+
+.hero-content p {
+    font-size: 19px; /* Direct pixel value */
+    max-width: 600px;
+    margin: 0 auto 24px; /* Direct pixel value */
+    opacity: 0.9;
+}
+
+.hero-content .btn-lg {
+     background-color: #DAA520; /* Direct color */
+     border-color: #DAA520; /* Direct color */
+     color: #36454F; /* Direct color */
+}
+.hero-content .btn-lg:hover{
+     background-color: #B8860B; /* Darker gold */
+     border-color: #B8860B;
+}
+
+/* ============================================= */
+/* END OF HERO SECTION STYLES                   */
+/* ============================================= */
+
+
+/* ============================================= */
+/* CATEGORIES SHOWCASE STYLES                  */
+/* ============================================= */
+.section-title {
+    margin-bottom: 32px; /* Direct pixel value */
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px; /* Direct pixel value */
+}
+
+.category-card {
+    display: block;
+    text-align: center;
+    background-color: #ffffff; /* Direct color */
+    border-radius: 5px; /* Direct pixel value */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.category-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.category-card h3 {
+    font-size: 18px; /* Direct pixel value */
+    padding: 16px; /* Direct pixel value */
+    margin-bottom: 0;
+    color: #36454F; /* Direct color */
+    font-weight: 600;
+}
+
+.category-card:hover,
+.category-card:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+.category-card:hover h3,
+.category-card:focus h3 {
+    color: #A0522D; /* Direct color */
+}
+
+
+/* ============================================= */
+/* END OF CATEGORIES SHOWCASE STYLES           */
+/* ============================================= */
+
+
+/* ============================================= */
+/* FEATURED PRODUCTS STYLES                    */
+/* ============================================= */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px; /* Direct pixel value */
+}
+
+.product-card {
+    background-color: #ffffff; /* White background for cards */
+    border: 1px solid #E8E4D5; /* Light border */
+    border-radius: 5px; /* Direct pixel value */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Needed for absolute positioned elements if added later */
+}
+.product-card:hover,
+.product-card:focus-within { /* Apply hover styles when focusing inside too */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.product-link {
+    display: block;
+    color: inherit;
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 16px; /* Direct pixel value */
+    flex-grow: 1; /* Allow info to take remaining space */
+    text-align: center;
+    display: flex; /* Use flex for better control */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: space-between; /* Push button to bottom (if inside info) */
+}
+
+.product-title {
+    font-size: 18px; /* Direct pixel value */
+    font-weight: 600;
+    margin-bottom: 4px; /* Direct pixel value */
+    color: #36454F;
+}
+.product-link:hover .product-title { /* Change title color on link hover */
+    color: #A0522D;
+}
+
+.product-artisan {
+    font-size: 14px; /* Direct pixel value */
+    color: #666;
+    margin-bottom: 8px; /* Direct pixel value */
+}
+
+.product-price {
+    font-size: 18px; /* Direct pixel value */
+    font-weight: 700;
+    color: #A0522D; /* Direct color */
+    margin-top: auto; /* Push price down if space allows */
+    padding-top: 8px; /* Space above price */
+    margin-bottom: 16px; /* Space below price before button */
+}
+
+/* Button positioning inside the card but outside the link area */
+.product-card .add-to-cart-btn {
+   width: calc(100% - 32px); /* Full width minus padding */
+   margin: 0 16px 16px; /* Horizontal and bottom margin */
+   align-self: center; /* Center button horizontally */
+}
+
+.view-all-link {
+    margin-top: 32px; /* Direct pixel value */
+}
+
+/* ============================================= */
+/* END OF FEATURED PRODUCTS STYLES             */
+/* ============================================= */
+
+
+/* ============================================= */
+/* MISSION / SPOTLIGHT SECTION STYLES          */
+/* ============================================= */
+.mission-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column */
+    gap: 32px; /* Direct pixel value */
+    align-items: center;
+}
+
+@media (min-width: 768px) { /* Apply two columns on medium screens and up */
+    .mission-container {
+        grid-template-columns: 1fr 1fr;
+    }
+     .mission-image {
+         order: 1; /* Image on the left by default, set order if needed */
+     }
+     .mission-text {
+         order: 2;
+     }
+}
+
+.mission-image img {
+    border-radius: 5px; /* Direct pixel value */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.mission-text h2 {
+    margin-top: 0; /* Remove top margin if image comes first on mobile */
+}
+
+.mission-text p {
+    margin-bottom: 16px; /* Direct pixel value */
+    font-size: 17px; /* Slightly larger text */
+    color: #4a5a6a; /* Slightly softer dark color */
+}
+.mission-text .btn {
+    margin-top: 16px; /* Direct pixel value */
+}
+
+@media (max-width: 767px) { /* Ensure text aligns center on mobile stack */
+     .mission-text {
+        text-align: center;
+     }
+     .mission-image {
+        margin-bottom: 24px; /* Direct pixel value */
+    }
+}
+
+/* ============================================= */
+/* END OF MISSION / SPOTLIGHT SECTION STYLES   */
+/* ============================================= */
+
+
+/* ============================================= */
+/* FOOTER STYLES                                 */
+/* ============================================= */
+.site-footer {
+  background-color: #2F4F4F; /* Direct color */
+  color: #E8E4D5; /* Lighter text for contrast */
+  padding-top: 48px; /* Direct pixel value */
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjust min width */
+  gap: 32px; /* Direct pixel value */
+  margin-bottom: 32px; /* Direct pixel value */
+}
+
+.footer-heading {
+  font-size: 18px; /* Direct pixel value */
+  font-weight: 700;
+  margin-bottom: 16px; /* Direct pixel value */
+  color: #ffffff; /* Direct color */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-column p {
+    font-size: 15px; /* Direct pixel value */
+    opacity: 0.8;
+    margin-bottom: 16px; /* Direct pixel value */
+    line-height: 1.7;
+}
+.footer-column .footer-list li {
+  margin-bottom: 8px; /* Direct pixel value */
+}
+.footer-column .footer-list a {
+  color: #E8E4D5; /* Direct color */
+  font-size: 15px; /* Direct pixel value */
+  opacity: 0.8;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.footer-column .footer-list a:hover,
+.footer-column .footer-list a:focus {
+   opacity: 1;
+   color: #ffffff;
+   text-decoration: underline;
+}
+
+.social-links a {
+    display: inline-block;
+    color: #E8E4D5; /* Direct color */
+    font-size: 19px; /* Direct pixel value */
+    margin-right: 16px; /* Direct pixel value */
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.social-links a:hover,
+.social-links a:focus {
+    opacity: 1;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Direct pixel value */
+}
+.newsletter-form input[type="email"] {
+    padding: 8px 16px; /* Direct pixel value */
+    border: 1px solid #608080; /* Lighter green/gray border */
+    background-color: #4F6F6F; /* Lighter green/gray background */
+    border-radius: 5px; /* Direct pixel value */
+    color: #F8F8F8; /* Direct color */
+    font-size: 15px; /* Direct pixel value */
+}
+.newsletter-form input[type="email"]::placeholder {
+    color: rgba(248, 248, 248, 0.6); /* Lighter placeholder */
+}
+.newsletter-form input[type="email"]:focus {
+    outline: none;
+    border-color: #A0522D; /* Highlight border on focus */
+    box-shadow: 0 0 0 2px rgba(160, 82, 45, 0.2);
+}
+
+.newsletter-form button {
+     background-color: #A0522D; /* Direct color */
+     border-color: #A0522D; /* Direct color */
+     color: #F8F8F8; /* Direct color */
+     align-self: flex-start;
+}
+/* Stacked form on mobile is fine, apply flex-row on larger screens */
+@media (min-width: 500px) {
+    .newsletter-form {
+        flex-direction: row;
+    }
+     .newsletter-form input[type="email"] {
+        flex-grow: 1;
+        border-radius: 5px 0 0 5px; /* Direct pixel value */
+    }
+    .newsletter-form button {
+        border-radius: 0 5px 5px 0; /* Direct pixel value */
+        align-self: stretch; /* Make button same height as input */
+    }
+}
+
+
+.copyright-container {
+  border-top: 1px solid #608080; /* Lighter green/gray border */
+  padding: 24px 16px; /* Direct pixel value */
+  text-align: center;
+}
+
+.copyright-text {
+  font-size: 14px; /* Direct pixel value */
+  opacity: 0.7;
+  margin: 0; /* Remove default paragraph margin */
+}
+
+/* ============================================= */
+/* END OF FOOTER STYLES                         */
+/* ============================================= */
+
+
+/* ============================================= */
+/* PAGE SPECIFIC STYLES (Shop, Cart, Account etc) */
+/* ============================================= */
+
+/* Page Header (Breadcrumbs & Title Area) */
+.page-header {
+    /* padding already handled by section-padding */
+    /* background color already handled by bg-medium */
+    border-bottom: 1px solid #d8d4c5; /* Slightly darker than bg-medium */
+}
+
+.breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 0; /* Space below breadcrumbs */
+    font-size: 14px; /* Smaller font */
+}
+
+.breadcrumbs li {
+    display: inline;
+    color: #666; /* Lighter color */
+}
+
+.breadcrumbs li:not(:last-child)::after {
+    content: '/'; /* Separator */
+    margin: 0 8px; /* Spacing around separator */
+    color: #999;
+}
+
+.breadcrumbs a {
+    color: #36454F; /* Dark text color */
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: #A0522D; /* Primary color on hover */
+    text-decoration: underline;
+}
+
+.page-title {
+    font-size: 36px; /* Large page title */
+    margin-bottom: 0; /* Remove default margin if needed */
+    color: #36454F;
+}
+
+
+/* Shop Page - Filter/Sort Bar */
+.filter-sort-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px; /* Space above product grid */
+    padding-bottom: 16px;
+    border-bottom: 1px solid #cccccc;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 16px;
+}
+
+.product-count {
+    font-size: 15px;
+    color: #666;
+    margin: 0;
+}
+
+.sort-options label {
+    margin-right: 8px;
+    font-size: 15px;
+    color: #36454F;
+}
+
+.sort-options select {
+    padding: 6px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+.sort-options select:focus {
+    outline: none;
+    border-color: #A0522D;
+    box-shadow: 0 0 0 2px rgba(160, 82, 45, 0.2);
+}
+
+
+/* Shop Page - Pagination */
+.pagination {
+    margin-top: 48px; /* Space above pagination */
+    text-align: center;
+}
+
+.pagination ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block; /* Center the list */
+}
+
+.pagination li {
+    display: inline;
+    margin: 0 4px; /* Spacing between page numbers */
+}
+
+.pagination .page-numbers {
+    display: inline-block;
+    padding: 8px 14px; /* Padding around number */
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    color: #36454F;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    min-width: 40px; /* Ensure consistent width */
+    text-align: center;
+    background-color: #ffffff; /* White background */
+}
+
+.pagination .page-numbers:hover,
+.pagination .page-numbers:focus {
+    background-color: #E8E4D5; /* Medium background on hover */
+    border-color: #b3b3b3;
+    color: #36454F;
+}
+
+.pagination .page-numbers.current {
+    background-color: #A0522D; /* Primary color for current page */
+    color: #F8F8F8; /* Light text */
+    border-color: #A0522D;
+    font-weight: 600;
+    cursor: default;
+}
+.pagination .page-numbers.dots { /* Style for ... if added */
+    border: none;
+    background: none;
+    cursor: default;
+}
+
+
+/* Cart Page Styles */
+.cart-container {
+    display: flex; /* Side-by-side layout for items and summary */
+    flex-direction: column; /* Stack on small screens */
+    gap: 48px; /* Space between items and summary */
+}
+
+@media (min-width: 992px) { /* Apply side-by-side on larger screens */
+    .cart-container {
+        flex-direction: row;
+        align-items: flex-start; /* Align tops */
+    }
+    .cart-items {
+        flex: 2; /* Take more space */
+    }
+    .cart-summary {
+        flex: 1; /* Take less space */
+        position: sticky; /* Make summary sticky */
+        top: 100px; /* Adjust based on header height + desired gap */
+    }
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse; /* Clean table lines */
+    margin-bottom: 24px; /* Space below table */
+    background-color: #ffffff; /* White background for table area */
+    border: 1px solid #E8E4D5; /* Light border around table */
+    border-radius: 5px;
+    overflow: hidden; /* Ensures border radius is applied */
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 16px 12px; /* Increased padding in cells */
+    text-align: left;
+    vertical-align: middle; /* Align content vertically */
+    border-bottom: 1px solid #E8E4D5; /* Light border between rows */
+}
+.cart-table tbody tr:last-child td {
+    border-bottom: none; /* No border on last row */
+}
+
+.cart-table thead {
+     background-color: #f8f8f8; /* Very light grey for header */
+}
+
+.cart-table th {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #666;
+    border-bottom-width: 1px; /* Consistent border width */
+    border-color: #E8E4D5;
+}
+
+.cart-item-image img {
+    width: 80px; /* Fixed image size */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #E8E4D5;
+}
+
+.cart-item-details {
+    /* Allow title to wrap */
+}
+
+.cart-item-title {
+    font-weight: 600;
+    color: #36454F;
+    display: block; /* Ensure it takes full width */
+    margin-bottom: 4px;
+}
+.cart-item-title:hover {
+    color: #A0522D;
+}
+
+
+.cart-item-artisan {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.cart-item-price,
+.cart-item-subtotal {
+    font-weight: 600;
+    color: #36454F;
+    white-space: nowrap; /* Prevent price wrapping */
+}
+
+/* Quantity Input Styles */
+.quantity-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    overflow: hidden; /* Keep buttons contained */
+    max-width: 100px; /* Limit width */
+}
+
+.quantity-input input[type="number"] {
+    width: 40px; /* Width for number */
+    text-align: center;
+    border: none;
+    padding: 6px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #36454F;
+    /* Hide spinner arrows (browser specific) */
+    -moz-appearance: textfield;
+}
+.quantity-input input[type="number"]::-webkit-outer-spin-button,
+.quantity-input input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.quantity-input input[type="number"]:focus {
+    outline: none; /* Remove default focus outline */
+}
+
+
+.quantity-input .qty-btn {
+    background-color: #f0f0f0;
+    border: none;
+    color: #36454F;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    transition: background-color 0.3s ease;
+}
+.quantity-input .qty-btn:hover {
+    background-color: #e0e0e0;
+}
+.quantity-input .qty-btn.minus {
+    border-right: 1px solid #cccccc; /* Separator line */
+}
+.quantity-input .qty-btn.plus {
+     border-left: 1px solid #cccccc; /* Separator line */
+}
+
+
+.cart-item-remove .remove-item-btn {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 24px; /* Larger 'x' */
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 8px;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+.cart-item-remove .remove-item-btn:hover {
+    color: #f44336; /* Red on hover */
+}
+
+.cart-actions {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 16px; /* Space between buttons */
+}
+
+
+/* Cart Summary Styles */
+.cart-summary {
+    background-color: #ffffff; /* White background */
+    padding: 24px; /* Padding inside summary box */
+    border-radius: 5px;
+    border: 1px solid #E8E4D5; /* Light border */
+}
+
+.summary-title {
+    font-size: 24px; /* Slightly smaller than page title */
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #36454F;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #36454F;
+}
+
+.summary-value {
+    font-weight: 600;
+    color: #36454F;
+}
+.summary-row span:first-child { /* Label */
+    color: #666;
+}
+
+.summary-divider {
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 16px 0;
+}
+
+.total-row {
+    font-size: 18px; /* Larger total */
+    font-weight: 700;
+}
+.total-value {
+    color: #A0522D; /* Primary color for total */
+}
+
+.checkout-btn.btn-block { /* Uses utility class */
+    margin-top: 24px;
+    padding: 14px; /* Larger button */
+    font-size: 18px;
+}
+
+/* Empty Cart Styles */
+.cart-empty {
+    padding: 48px 0; /* Add some padding */
+    border: 2px dashed #cccccc; /* Dashed border */
+    border-radius: 5px;
+    background-color: #fafafa; /* Slightly off-white background */
+    text-align: center; /* Center content */
+}
+.cart-empty p {
+    font-size: 18px;
+    margin-bottom: 24px;
+    color: #666;
+}
+
+
+/* Account Page Styles */
+.account-container {
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    gap: 32px;
+}
+
+@media (min-width: 768px) { /* Side-by-side on tablet+ */
+    .account-container {
+        flex-direction: row;
+        align-items: flex-start; /* Align tops */
+    }
+    .account-navigation {
+        flex: 0 0 200px; /* Fixed width for nav */
+        /* margin-right: 32px; Removed, gap handles spacing */
+    }
+    .account-content {
+        flex: 1; /* Content takes remaining space */
+        min-width: 0; /* Prevent flexbox overflow issues */
+    }
+}
+
+.account-navigation {
+    background-color: #ffffff; /* White background */
+    padding: 16px;
+    border-radius: 5px;
+    border: 1px solid #E8E4D5;
+}
+
+.account-nav-title {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 8px;
+    color: #36454F;
+}
+
+.account-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.account-navigation li {
+    margin-bottom: 4px;
+}
+
+.account-nav-link {
+    display: block;
+    padding: 8px 12px;
+    color: #36454F;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 600; /* Make nav links slightly bolder */
+}
+
+.account-nav-link:hover,
+.account-nav-link:focus {
+    background-color: #E8E4D5; /* Medium background */
+    color: #A0522D; /* Primary color */
+    outline: none; /* Remove focus outline if bg change is enough */
+}
+/* Style for the active account navigation link */
+.account-nav-link.active {
+    font-weight: 700;
+    color: #A0522D; /* Primary color for active account nav */
+    background-color: #f5f1e4; /* Slightly different active background */
+}
+
+
+.account-content {
+    background-color: #ffffff; /* White background for content panels */
+    padding: 24px;
+    border-radius: 5px;
+    border: 1px solid #E8E4D5;
+}
+
+.account-panel {
+    /* Shared styling for panels */
+}
+
+.account-panel-title {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 12px;
+    color: #36454F;
+}
+
+.account-panel p {
+    margin-bottom: 16px;
+    line-height: 1.7;
+    color: #4a5a6a;
+}
+/* Style links within account panels */
+.account-panel a:not(.btn):not(.account-nav-link) { /* Exclude buttons and nav links */
+    color: #A0522D; /* Primary color for links */
+    font-weight: 600;
+    text-decoration: underline;
+}
+.account-panel a:not(.btn):not(.account-nav-link):hover {
+    text-decoration: none;
+    color: #8B4513; /* Darker brown on hover */
+}
+
+.dashboard-summary {
+    margin-top: 32px;
+    padding: 24px;
+    background-color: #f9f9f9; /* Slightly different bg */
+    border: 1px solid #E8E4D5;
+    border-radius: 5px;
+}
+.dashboard-summary h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 20px;
+    color: #36454F;
+}
+
+
+/* Account Page - Orders Table Example */
+.orders-table { /* Similar to cart table */
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    font-size: 15px;
+}
+.orders-table th, .orders-table td {
+    padding: 12px 8px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #E8E4D5;
+}
+.orders-table thead th {
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.orders-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+
+/* Account Page - Address Grid & Form */
+.address-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 32px; /* Space before edit form appears */
+}
+@media (min-width: 768px) {
+    .address-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns side-by-side */
+    }
+}
+
+.address-column h3 {
+    font-size: 18px;
+    margin-top: 0;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    color: #36454F;
+}
+
+.address-column address {
+    font-style: normal;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    min-height: 100px; /* Ensure some space even if empty */
+    color: #666;
+}
+
+.address-column .edit-address-btn {
+    /* Existing btn styles apply */
+    font-size: 14px; /* Smaller button text */
+    padding: 4px 12px; /* Smaller padding */
+}
+
+#address-edit-form-container h3 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: #36454F;
+}
+
+/* Account Page - Account Details Form */
+#account-details-form small {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.password-change-fieldset {
+    border: 1px solid #cccccc;
+    padding: 16px 24px 24px; /* Padding inside fieldset */
+    margin-top: 32px;
+    margin-bottom: 24px;
+    border-radius: 5px;
+}
+
+.password-change-fieldset legend {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 8px; /* Space around legend text */
+    margin-left: 16px; /* Align with padding */
+    width: auto; /* Allow legend to size naturally */
+    color: #36454F;
+}
+
+/* Account/Address form status messages */
+#account-status, #address-status {
+    margin-top: 20px;
+    padding: 12px 16px;
+    border-radius: 5px;
+    display: none; /* Hidden by default */
+}
+#account-status.success, #address-status.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+#account-status.error, #address-status.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+
+/* ============================================= */
+/* FORM STYLES (General) - Place these before page-specific form styles */
+/* ============================================= */
+.site-form .form-group {
+    margin-bottom: 20px; /* Direct pixel value */
+}
+
+.site-form label {
+    display: block;
+    margin-bottom: 6px; /* Direct pixel value */
+    font-weight: 600;
+    font-size: 15px; /* Direct pixel value */
+    color: #36454F; /* Direct color */
+}
+
+.site-form .form-control {
+    display: block; /* Ensure it takes full width */
+    width: 100%;
+    padding: 10px 16px; /* Direct pixel value */
+    font-size: 16px; /* Direct pixel value */
+    line-height: 1.5;
+    color: #36454F; /* Direct color */
+    background-color: #ffffff; /* Direct color */
+    background-clip: padding-box; /* Needed for some browsers */
+    border: 1px solid #cccccc; /* Direct color */
+    border-radius: 5px; /* Direct pixel value */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-family: 'Nunito Sans', sans-serif; /* Ensure consistent font */
+}
+
+.site-form .form-control:focus {
+    border-color: #A0522D; /* Direct color */
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.25); /* Subtle focus ring */
+}
+
+.site-form textarea.form-control {
+    resize: vertical; /* Allow vertical resize */
+    min-height: 120px; /* Direct pixel value */
+}
+
+.site-form select.form-control {
+    /* Basic appearance reset - may need browser prefixes */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Add custom arrow */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2336454F' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 16px center; /* Position arrow */
+    background-size: 12px 12px; /* Arrow size */
+    padding-right: 40px; /* Make space for arrow */
+}
+
+.site-form .form-control::placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+.site-form .required {
+    color: #dc3545; /* Standard error red */
+    margin-left: 2px;
+}
+
+/* Form Row Layout Helper */
+.site-form .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Match form-group margin */
+    /* If using negative margins: */
+    /* margin-left: -10px; */
+    /* margin-right: -10px; */
+}
+
+.site-form .form-group-half {
+    flex: 1 1 calc(50% - 10px); /* Two columns with gap adjustment */
+    min-width: 150px; /* Prevent excessive shrinking */
+    /* If using negative margins: */
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+}
+/* Clearfix if using floats instead of flexbox */
+/* .site-form .form-row::after { content: ""; display: table; clear: both; } */
+
+
+/* ============================================= */
+/* CONTACT PAGE SPECIFIC STYLES                */
+/* ============================================= */
+.contact-container {
+    display: grid;
+    gap: 48px; /* Direct pixel value */
+}
+
+@media (min-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr 2fr; /* Info column smaller */
+        align-items: start; /* Align items to the top */
+    }
+}
+
+.contact-info h2, .contact-form-wrapper h2 {
+    margin-top: 0;
+    margin-bottom: 24px; /* Direct pixel value */
+    color: #36454F;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 16px; /* Direct pixel value */
+}
+
+.contact-info li {
+    margin-bottom: 12px; /* Direct pixel value */
+    display: flex;
+    align-items: center;
+    font-size: 16px; /* Direct pixel value */
+    color: #4a5a6a;
+}
+
+.contact-info li i {
+    font-size: 18px; /* Direct pixel value */
+    color: #A0522D; /* Direct color */
+    margin-right: 12px; /* Direct pixel value */
+    width: 20px; /* Fixed width for alignment */
+    text-align: center;
+}
+.contact-info a {
+    color: #A0522D; /* Direct color */
+    text-decoration: underline;
+}
+.contact-info a:hover {
+    text-decoration: none;
+    color: #8B4513;
+}
+
+/* Style for form feedback messages (contact page) */
+#form-status {
+    margin-top: 20px;
+    padding: 12px 16px;
+    border-radius: 5px;
+    display: none; /* Hidden by default, shown by JS/PHP */
+}
+#form-status.success {
+    background-color: #d4edda; /* Bootstrap success green */
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+#form-status.error {
+    background-color: #f8d7da; /* Bootstrap danger red */
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+/* ============================================= */
+/* APPLICATION PAGE SPECIFIC STYLES            */
+/* ============================================= */
+.application-intro p {
+    max-width: 700px;
+    margin: 16px auto 0; /* Direct pixel value */
+    font-size: 18px; /* Direct pixel value */
+    color: #666;
+    line-height: 1.7;
+}
+
+.large-form {
+    max-width: 800px; /* Limit width for better readability */
+    margin: 40px auto 0; /* Center the form, add top margin */
+    background-color: #ffffff; /* White background for form area */
+    padding: 32px;
+    border-radius: 5px;
+    border: 1px solid #E8E4D5;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.large-form h3 {
+    margin-top: 32px; /* Direct pixel value */
+    margin-bottom: 24px; /* Direct pixel value */
+    font-size: 22px; /* Direct pixel value */
+    border-bottom: 1px solid #E8E4D5; /* Direct color */
+    padding-bottom: 10px; /* Direct pixel value */
+    color: #36454F;
+}
+.large-form h3:first-of-type {
+    margin-top: 0;
+}
+
+.file-input {
+    /* Basic styling - file inputs are notoriously hard to style directly */
+    /* Often involves hiding the default input and styling a label */
+    padding: 10px; /* Adjust padding as it behaves differently */
+    background-color: #f9f9f9; /* Slightly different background */
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.file-input:hover {
+    border-color: #A0522D;
+}
+
+/* Custom file input styling (optional advanced) */
+/* .file-input-wrapper { position: relative; overflow: hidden; display: inline-block; } */
+/* .file-input-wrapper input[type=file] { font-size: 100px; position: absolute; left: 0; top: 0; opacity: 0; cursor: pointer; } */
+/* .file-input-wrapper .btn { } */
+
+
+.file-feedback {
+    font-size: 14px; /* Direct pixel value */
+    margin-top: 6px; /* Direct pixel value */
+    color: #666; /* Default color */
+    line-height: 1.4;
+}
+.file-feedback.error {
+    color: #dc3545; /* Red for errors */
+}
+.file-feedback.success {
+    color: #28a745; /* Green for success/info */
+}
+
+/* Application form status */
+#application-status {
+    /* Uses same status styles as #form-status */
+}
+#application-status.success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; display: block; padding: 12px 16px; border-radius: 5px; }
+#application-status.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; display: block; padding: 12px 16px; border-radius: 5px; }
+
+
+/* ============================================= */
+/* MOBILE STYLES & MEDIA QUERIES               */
+/* ============================================= */
+@media (max-width: 767px) { /* Apply to screens smaller than 768px */
+    h1 { font-size: 32px; }
+    h2 { font-size: 28px; }
+    h3 { font-size: 22px; }
+
+    .header-container {
+        /* Adjust padding if needed */
+    }
+
+    .main-navigation .nav-list {
+        /* Mobile menu styles */
+        display: none; /* Hide by default, shown by JS */
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        right: 0;
+        background-color: #F5F5DC; /* Background for mobile menu */
+        flex-direction: column;
+        padding: 16px 0; /* Vertical padding */
+        border-top: 1px solid #cccccc; /* Separator */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        gap: 0; /* Reset gap for column layout */
+        max-height: calc(100vh - 60px); /* Limit height to viewport minus header */
+        overflow-y: auto; /* Allow scrolling if needed */
+    }
+
+    .main-navigation .nav-list.active { /* Class added by JS */
+        display: flex;
+    }
+
+     .main-navigation .nav-item {
+         width: 100%; /* Full width list items */
+         border-bottom: 1px solid #E8E4D5; /* Separator between items */
+     }
+     .main-navigation .nav-item:last-child {
+         border-bottom: none;
+     }
+
+     .main-navigation .nav-link {
+         display: block; /* Make links take full width */
+         padding: 12px 16px; /* Padding inside links */
+     }
+
+    /* Mobile Dropdown Handling */
+     .nav-item.dropdown > .nav-link i.fa-chevron-down {
+         display: inline-block; /* Keep arrow visible */
+         margin-left: auto; /* Push arrow to the right */
+         transition: transform 0.3s ease;
+     }
+     /* Rotate arrow when dropdown is conceptually 'open' (though sub-menu is always visible below) */
+     /* This requires JS to add an 'open' class to the parent li */
+     /* .nav-item.dropdown.open > .nav-link i.fa-chevron-down { transform: rotate(180deg); } */
+
+     .dropdown-menu {
+         position: static; /* Remove absolute positioning */
+         display: block; /* Always show sub-items nested */
+         border: none;
+         box-shadow: none;
+         padding: 0 0 0 16px; /* Indent sub-items */
+         background-color: transparent;
+         margin-top: -8px; /* Adjust spacing */
+         margin-bottom: 8px;
+     }
+      .dropdown-menu li a {
+          padding: 8px 16px;
+          font-size: 14px;
+          color: #4a5a6a; /* Slightly softer color for sub-items */
+      }
+       .dropdown-menu li a:hover,
+       .dropdown-menu li a:focus {
+           background-color: transparent; /* Remove hover background */
+           color: #A0522D; /* Highlight color */
+       }
+       .dropdown-divider {
+           display: none; /* Hide dividers on mobile */
+       }
+
+
+    .mobile-nav-toggle {
+        display: block; /* Show toggle button */
+    }
+
+    .header-actions {
+        gap: 12px; /* Slightly reduce gap */
+    }
+    .header-actions .action-link,
+    .header-actions .search-toggle {
+        font-size: 18px; /* Slightly smaller icons */
+    }
+    .cart-count {
+        top: -4px;
+        right: -8px;
+        min-width: 16px;
+        height: 16px;
+        font-size: 10px;
+    }
+
+    .search-bar {
+        width: 95%; /* Wider search bar on mobile */
+        top: calc(100% + 5px);
+    }
+
+    .hero-content h1 { font-size: 36px; }
+    .hero-content p { font-size: 17px; }
+
+    .product-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; } /* Smaller columns and gap */
+    .product-card .add-to-cart-btn { font-size: 14px; padding: 8px 12px;}
+
+    .filter-sort-bar { flex-direction: column; align-items: stretch; }
+    .sort-options { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+
+    .cart-table th:nth-child(3), /* Hide Price column */
+    .cart-table td:nth-child(3) {
+        /* display: none; */ /* Or adjust layout - hiding can be confusing */
+    }
+     .cart-table th { font-size: 12px; }
+     .cart-table td { padding: 12px 8px; }
+     .cart-item-title { font-size: 15px; }
+     .cart-item-image img { width: 60px; height: 60px; }
+     .quantity-input { max-width: 90px; }
+     .cart-item-remove .remove-item-btn { font-size: 20px; }
+
+    .account-navigation { margin-bottom: 24px; /* Add space below nav when stacked */ }
+
+    /* Make form rows stack instead of side-by-side */
+    .site-form .form-row { flex-direction: column; gap: 0; } /* Remove gap for stacked */
+    .site-form .form-group-half { width: 100%; flex-basis: auto; } /* Full width */
+    .site-form .form-group-half:first-child { margin-bottom: 20px; } /* Re-add margin between stacked halves */
+
+    .footer-container { grid-template-columns: 1fr; text-align: center; } /* Stack footer columns */
+    .footer-column .social-links { justify-content: center; }
+    .newsletter-form { flex-direction: column; align-items: center; }
+    .newsletter-form input[type="email"] { border-radius: 5px; width: 100%; max-width: 300px; text-align: center;}
+    .newsletter-form button { border-radius: 5px; margin-top: 8px; }
+
+}
+
+/* ============================================= */
+/* END OF MOBILE STYLES & MEDIA QUER
